@@ -17,6 +17,7 @@ import * as SVG from './svgXml';
 import * as STORAGEFNC from '../data/storageFunc'
 import { SvgXml } from 'react-native-svg';
 import * as CLASS from './Class';
+import * as CTEXT from './CustomText';
 import clrStyle, { NGHIASTYLE } from './componentStyleSheet';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as CUSTOMCACHE from '../data/store';
@@ -29,7 +30,7 @@ const BOTTOM_TAB_ICON_HEIGHT = VH_VW ? vh(14) : vw(14)
 const BOTTOM_TAB_HEIGHT = VH_VW ? vh(16) : vw(16)
 const COLORFOCUS = NGHIASTYLE.NghiaWarning800
 const COLORNOTFOCUS = NGHIASTYLE.NghiaWarning500
-const LABELTEXTCLASS = CLASS.Inter12Reg
+const LABELTEXTCLASS = CTEXT.Be14Med
 
 // icon generator
 const iconData: { page: any, icon: string, iconActive: string, title: string }[] = [

@@ -44,5 +44,3 @@ function App(): React.JSX.Element {
 }
 
 export default App;
-
-export const VERCOLOR = 1;

@@ -199,476 +199,6 @@ export class ViewColStartBetween extends Component<{ children?: React.ReactNode,
 
 // END OF UNIVERSAL CLASS SECTION
 
-// FONT SECTION
-export class Nunito12Med extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Medium', fontSize: vw(3) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito14Med extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Medium', fontSize: vw(3.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito16Med extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Medium', fontSize: vw(4) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito18Med extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Medium', fontSize: vw(4.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito10Reg extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Regular', fontSize: vw(2.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito12Reg extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Regular', fontSize: vw(3) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito14Reg extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Regular', fontSize: vw(3.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito16Reg extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Regular', fontSize: vw(4) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito24Reg extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Regular', fontSize: vw(6) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito18Reg extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Regular', fontSize: vw(4.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito12Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Bold', fontSize: vw(3) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito14Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Bold', fontSize: vw(3.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito16Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Bold', fontSize: vw(4) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito18Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Bold', fontSize: vw(4.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito20Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Bold', fontSize: vw(5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito22Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Bold', fontSize: vw(5.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito24Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-Bold', fontSize: vw(6) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Nunito14ExBold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Nunito-ExtraBold', fontSize: vw(3.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Signika20Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Signika-Bold', fontSize: vw(5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Signika22Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Signika-Bold', fontSize: vw(5.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Signika24Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Signika-Bold', fontSize: vw(6) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Signika28Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Signika-Bold', fontSize: vw(7) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class SonsieOne100 extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'SonsieOne-Regular', fontSize: vw(25), color: '#85C5C9' }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Signika20SemiBold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Signika-SemiBold', fontSize: vw(5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Signika22SemiBold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Signika-SemiBold', fontSize: vw(5.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Signika24SemiBold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Signika-SemiBold', fontSize: vw(6) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Roboto20Med extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Roboto-Medium', fontSize: vw(5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Roboto16Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Roboto-Bold', fontSize: vw(4) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Roboto20Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Roboto-Bold', fontSize: vw(5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class SFproDisplay20Med extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'SF-Pro-Display-Medium', fontSize: vw(5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Helvetica19Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Helvetica', fontSize: vw(4.75), fontWeight: 'bold' }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Inter20Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Inter18pt-Bold', fontSize: vw(5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Inter16Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Inter18pt-Bold', fontSize: vw(4) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Inter14Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Inter18pt-Bold', fontSize: vw(3.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Inter12Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Inter18pt-Bold', fontSize: vw(3) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Inter20Reg extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Inter18pt-Regular', fontSize: vw(5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Inter16Reg extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Inter18pt-Regular', fontSize: vw(4) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Inter14Reg extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Inter18pt-Regular', fontSize: vw(3.5) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-export class Inter12Reg extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
-    render() {
-        const { children, style, lineNumber } = this.props;
-
-        return (
-            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'Inter18pt-Regular', fontSize: vw(3) }, style]}>
-                {children}
-            </Text>
-        );
-    }
-}
-
-// ____________________END OF FONT_______________________
 
 /**
  * A React component that renders a customizable status bar and its content.
@@ -844,125 +374,75 @@ export class TopNav2 extends Component<{
     }
 }
 
-export class TopBarWithAvatarIMGand2RightIcon extends Component<{
-    title: string
-    avatarIMG: any
-    rightIcon1: any
-    rightIcon1Press?: () => void
-    avatarPress?: () => void
-    customStyle?: any
-}> {
-    render() {
-        const { avatarIMG, rightIcon1, rightIcon1Press, title, avatarPress, customStyle } = this.props;
-        return (
-            <ViewRowBetweenCenter style={[styles.padding4vw, customStyle]}>
-                <Inter20Bold style={{ color: NGHIASTYLE.NghiaGray700 }}>{title}</Inter20Bold>
-                <ViewRowBetweenCenter style={[styles.gap3vw]}>
-                    <TouchableOpacity
-                        style={[styles.borderRadius100, styles.padding1vw, { backgroundColor: '#F2F4F7' }]}
-                        onPress={avatarPress ? avatarPress : undefined}>
-                        {avatarIMG ? <Image source={{ uri: avatarIMG }} style={[styles.borderRadius100, { width: vw(6), height: vw(6) }] as ImageStyle} /> : <View style={[styles.borderRadius100, styles.bgcolorBlack, { width: vw(6), height: vw(6) }]} />}
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={rightIcon1Press ? rightIcon1Press : undefined}>
-                        {rightIcon1}
-                    </TouchableOpacity>
-                </ViewRowBetweenCenter>
-            </ViewRowBetweenCenter>
-        );
-    }
-}
+// export class BoardingInput extends Component<{
+//     title: string,
+//     supFncTitle?: string,
+//     supFncTitleColor?: string,
+//     supFnc?: () => void,
+//     subTitle?: string,
+//     placeholder?: string,
+//     value: string | number,
+//     isNumber?: boolean,
+//     onChgText: (value: string | number) => void,
+//     CustomStyleClass?: any,
+//     CustomStyleText?: any,
+//     CustomStyleInput?: any,
+//     contentType?: string
+//     hideContent?: boolean,
+//     hideContentFnc?: (value: boolean) => void,
+//     autoCap?: 'none' | 'characters' | 'words' | 'sentences',
+//     maxLength?: number,
+//     activeColor?: string,
+//     passiveColor?: string,
+//     tileColor?: string,
+// }> {
 
-export class LowBtn extends Component<{
-    title: string,
-    onPress: () => void,
-    bgColor?: string,
-    fontColor?: string,
-    icon?: any,
-    round?: number,
-    CustomStyle?: any,
-    FontElement?: ComponentType<{ children: React.ReactNode }>,
-}> {
-    render() {
-        const { title, onPress, bgColor, fontColor, icon, round, CustomStyle, FontElement } = this.props;
-        const Font = FontElement ? FontElement : Roboto16Bold;
-        return (
-            <TouchableOpacity onPress={onPress} style={[styles.flexRowCenter, styles.gap3vw, styles.borderRadius100, styles.shadowW0H1Black, styles.w90, styles.alignSelfCenter, { backgroundColor: bgColor ? bgColor : clrStyle.black, padding: vw(3.75), borderRadius: round ? round : vw(1000) }, CustomStyle ? CustomStyle : null]}>
-                {icon ? icon : null}
-                <Font style={{ color: fontColor ? fontColor : clrStyle.white, }}>{title}</Font>
-            </TouchableOpacity>
-        );
-    }
-}
+//     render() {
+//         const { title, placeholder, value, onChgText, CustomStyleClass, CustomStyleInput, CustomStyleText, contentType, subTitle, supFnc, supFncTitle, hideContent, hideContentFnc, autoCap, maxLength, supFncTitleColor, activeColor, passiveColor, tileColor } = this.props;
+//         const isNumber = this.props.isNumber ? this.props.isNumber : false;
 
-export class BoardingInput extends Component<{
-    title: string,
-    supFncTitle?: string,
-    supFncTitleColor?: string,
-    supFnc?: () => void,
-    subTitle?: string,
-    placeholder?: string,
-    value: string | number,
-    isNumber?: boolean,
-    onChgText: (value: string | number) => void,
-    CustomStyleClass?: any,
-    CustomStyleText?: any,
-    CustomStyleInput?: any,
-    contentType?: string
-    hideContent?: boolean,
-    hideContentFnc?: (value: boolean) => void,
-    autoCap?: 'none' | 'characters' | 'words' | 'sentences',
-    maxLength?: number,
-    activeColor?: string,
-    passiveColor?: string,
-    tileColor?: string,
-}> {
+//         function changFnc(value: string | number) {
+//             if (isNumber) {
+//                 onChgText(parseInt(value as string));
+//             } else {
+//                 onChgText(value);
+//             }
+//         }
 
-    render() {
-        const { title, placeholder, value, onChgText, CustomStyleClass, CustomStyleInput, CustomStyleText, contentType, subTitle, supFnc, supFncTitle, hideContent, hideContentFnc, autoCap, maxLength, supFncTitleColor, activeColor, passiveColor, tileColor } = this.props;
-        const isNumber = this.props.isNumber ? this.props.isNumber : false;
-
-        function changFnc(value: string | number) {
-            if (isNumber) {
-                onChgText(parseInt(value as string));
-            } else {
-                onChgText(value);
-            }
-        }
-
-        return (
-            <View style={[styles.flexColCenter, styles.gap4vw, styles.positionRelative, CustomStyleClass]}>
-                {title ?
-                    <Nunito24Bold style={[{ color: tileColor }, CustomStyleText]}>{title}</Nunito24Bold>
-                    : null}
-                <TextInput
-                    placeholder={placeholder ? placeholder : 'Type here'}
-                    value={value ? value.toString() : ''}
-                    onChangeText={changFnc}
-                    placeholderTextColor={passiveColor as string}
-                    secureTextEntry={hideContent ? hideContent : false}
-                    keyboardType={isNumber ? 'numeric' : 'default'}
-                    autoCapitalize={autoCap ? autoCap : 'sentences'}
-                    textContentType={contentType as TextInputProps['textContentType']}
-                    maxLength={maxLength ? maxLength : undefined}
-                    style={[styles.w100, styles.border1, styles.textCenter, { borderColor: value ? activeColor : passiveColor, padding: vw(2.5), fontFamily: value ? 'Nunito-Bold' : 'Nunito-Regular', fontSize: vw(4.5), borderRadius: vw(2), color: value ? activeColor : passiveColor }, CustomStyleInput]} />
-                {hideContentFnc ?
-                    <TouchableOpacity
-                        onPress={() => { hideContentFnc && hideContentFnc(!hideContent) }}
-                        style={[styles.padding2vw, styles.positionAbsolute, { bottom: -vw(12) }]}>
-                        <Nunito14Reg style={{ color: activeColor }}>{hideContent ? `Show ${contentType}` : `Hide ${contentType}`}</Nunito14Reg>
-                    </TouchableOpacity>
-                    : null}
-                {subTitle ?
-                    <View style={[styles.flexRowCenter]}>
-                        <Nunito16Reg style={[{ color: passiveColor }]}>{subTitle}</Nunito16Reg>
-                        <TouchableOpacity onPress={supFnc}><Nunito16Reg style={[styles.textUnderline, { color: supFncTitleColor ? supFncTitleColor : clrStyle.black }]}>{supFncTitle}</Nunito16Reg></TouchableOpacity>
-                    </View>
-                    : null
-                }
-            </View>
-        );
-    }
-}
+//         return (
+//             <View style={[styles.flexColCenter, styles.gap4vw, styles.positionRelative, CustomStyleClass]}>
+//                 {title ?
+//                     <Nunito24Bold style={[{ color: tileColor }, CustomStyleText]}>{title}</Nunito24Bold>
+//                     : null}
+//                 <TextInput
+//                     placeholder={placeholder ? placeholder : 'Type here'}
+//                     value={value ? value.toString() : ''}
+//                     onChangeText={changFnc}
+//                     placeholderTextColor={passiveColor as string}
+//                     secureTextEntry={hideContent ? hideContent : false}
+//                     keyboardType={isNumber ? 'numeric' : 'default'}
+//                     autoCapitalize={autoCap ? autoCap : 'sentences'}
+//                     textContentType={contentType as TextInputProps['textContentType']}
+//                     maxLength={maxLength ? maxLength : undefined}
+//                     style={[styles.w100, styles.border1, styles.textCenter, { borderColor: value ? activeColor : passiveColor, padding: vw(2.5), fontFamily: value ? 'Nunito-Bold' : 'Nunito-Regular', fontSize: vw(4.5), borderRadius: vw(2), color: value ? activeColor : passiveColor }, CustomStyleInput]} />
+//                 {hideContentFnc ?
+//                     <TouchableOpacity
+//                         onPress={() => { hideContentFnc && hideContentFnc(!hideContent) }}
+//                         style={[styles.padding2vw, styles.positionAbsolute, { bottom: -vw(12) }]}>
+//                         <Nunito14Reg style={{ color: activeColor }}>{hideContent ? `Show ${contentType}` : `Hide ${contentType}`}</Nunito14Reg>
+//                     </TouchableOpacity>
+//                     : null}
+//                 {subTitle ?
+//                     <View style={[styles.flexRowCenter]}>
+//                         <Nunito16Reg style={[{ color: passiveColor }]}>{subTitle}</Nunito16Reg>
+//                         <TouchableOpacity onPress={supFnc}><Nunito16Reg style={[styles.textUnderline, { color: supFncTitleColor ? supFncTitleColor : clrStyle.black }]}>{supFncTitle}</Nunito16Reg></TouchableOpacity>
+//                     </View>
+//                     : null
+//                 }
+//             </View>
+//         );
+//     }
+// }
 
 export class ProcessBarSelfMade extends Component<{
     barLength: number,
@@ -1007,140 +487,46 @@ export class ProcessBarSelfMade extends Component<{
     }
 }
 
-export class BoardingNavigation extends Component<{
-    fnc: (value: boolean) => void,
-    leftTitle: string,
-    rightTitle: string,
-    showGoBack: boolean,
-    currentStep: number,
-    dataLength: number,
-    activeColor?: string,
-    passiveColor?: string,
-    activeArrowColor?: string,
-    passiveArrowColor?: string,
-}> {
-    render() {
-        const { fnc, leftTitle, rightTitle, showGoBack, currentStep, dataLength, activeColor, passiveColor, activeArrowColor, passiveArrowColor } = this.props;
+// export class SectionTitleAndRightArrow extends Component<{
+//     title: string,
+//     titleFontClass?: ComponentType<{ children: React.ReactNode }>,
+//     fnc: () => void,
+//     titleColor?: string,
+//     arrowColor?: string,
+// }> {
+//     render() {
+//         const { title, fnc, titleColor, arrowColor } = this.props;
+//         const TitleFontClass = this.props.titleFontClass ? this.props.titleFontClass : Inter16Bold;
+//         return (
+//             <ViewRowBetweenCenter style={[styles.paddingH6vw, styles.paddingV2vw]}>
+//                 <TitleFontClass style={[{ color: titleColor ? titleColor : clrStyle.black }]}>{title}</TitleFontClass>
+//                 <TouchableOpacity onPress={fnc}>
+//                     {SVG.sharpRightArrow(vw(6), vw(6), arrowColor ? arrowColor : clrStyle.black)}
+//                 </TouchableOpacity>
+//             </ViewRowBetweenCenter>
+//         )
+//     }
+// }
 
-        return (
-            <View style={[styles.flexRowBetweenCenter, styles.marginTop2vw, styles.marginBottom8vw]}>
-                <TouchableOpacity
-                    onPress={() => { fnc(false) }}>
-                    <View style={[styles.borderRadius100, styles.wfit, { padding: vw(2.5), backgroundColor: currentStep > 0 ? activeColor as string : passiveColor as string }]}>
-                        {showGoBack ?
-                            <Nunito16Reg style={[styles.textUpperCase, styles.paddingH2vw, { color: clrStyle.black }]}>{leftTitle}</Nunito16Reg>
-                            :
-                            SVG.sharpLeftArrow(vw(6), vw(6), currentStep > 0 ? activeArrowColor : passiveArrowColor)}
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => { fnc(true) }}>
-                    <View style={[styles.borderRadius100, styles.wfit, { padding: vw(2.5), backgroundColor: currentStep < dataLength - 1 ? activeColor as string : passiveArrowColor as string }]}>
-                        {currentStep < dataLength - 1 ?
-                            SVG.sharpRightArrow(vw(6), vw(6), currentStep < dataLength - 1 ? activeArrowColor : passiveArrowColor)
-                            :
-                            <Nunito16Bold style={[styles.textUpperCase, styles.paddingH2vw, { color: clrStyle.white }]}>{rightTitle}</Nunito16Bold>
-                        }
-                    </View>
-                </TouchableOpacity>
-            </View>
-        )
-    }
-}
-
-export class BoardingPicking extends Component<{
-    data: string[],
-    selected: string[],
-    setSelected: (value: string[]) => void,
-    maxLength?: number | undefined,
-    deleteFromOriginal?: string[],
-    deleteFromOtherSelected1?: string,
-    deleteFromOriginalFnc?: (value: string[]) => void,
-    deleteFromOtherSelectedFnc1?: (value: string) => void,
-    originalData?: string[],
-}> {
-    render() {
-        const { data, selected, setSelected, maxLength, originalData, deleteFromOriginal, deleteFromOriginalFnc, deleteFromOtherSelected1, deleteFromOtherSelectedFnc1 } = this.props;
-        const length = maxLength ? maxLength : data.length;
-        return (
-            <View style={[styles.flexRowStartCenter, styles.flexWrap, styles.gap4vw]}>
-                {data.map((item, index) => {
-                    return (
-                        <TouchableOpacity
-                            key={index}
-                            onPress={() => {
-                                if (selected.includes(item)) {
-                                    setSelected(selected.filter((value) => value !== item))
-                                    if (deleteFromOriginal && deleteFromOriginalFnc && !originalData?.includes(item)) {
-                                        deleteFromOriginalFnc(deleteFromOriginal.filter((value) => value !== item))
-                                    }
-                                    if (deleteFromOtherSelected1 && deleteFromOtherSelectedFnc1) {
-                                        if (deleteFromOtherSelected1.includes(`${item},`)) {
-                                            deleteFromOtherSelectedFnc1(deleteFromOtherSelected1.replace(`${item},`, ''))
-                                        } else {
-                                            deleteFromOtherSelectedFnc1(deleteFromOtherSelected1.replace(item, ''))
-                                        }
-                                    }
-                                } else {
-                                    if (selected.length < length!) {
-                                        setSelected([...selected, item])
-                                    }
-                                };
-                            }}
-                            style={[styles.wfit, styles.paddingV2vw, styles.paddingH4vw, styles.border1, { borderColor: selected.includes(item) ? clrStyle.black as string : clrStyle.white as string, borderRadius: vw(2), }]}>
-                            {selected.includes(item) ?
-                                <Nunito14ExBold style={[{ color: clrStyle.black }]}>{item}</Nunito14ExBold>
-                                :
-                                <Nunito14Reg style={[{ color: clrStyle.black }]}>{item}</Nunito14Reg>
-                            }
-                        </TouchableOpacity>
-                    )
-                })}
-            </View>
-        )
-    }
-}
-
-export class SectionTitleAndRightArrow extends Component<{
-    title: string,
-    titleFontClass?: ComponentType<{ children: React.ReactNode }>,
-    fnc: () => void,
-    titleColor?: string,
-    arrowColor?: string,
-}> {
-    render() {
-        const { title, fnc, titleColor, arrowColor } = this.props;
-        const TitleFontClass = this.props.titleFontClass ? this.props.titleFontClass : Inter16Bold;
-        return (
-            <ViewRowBetweenCenter style={[styles.paddingH6vw, styles.paddingV2vw]}>
-                <TitleFontClass style={[{ color: titleColor ? titleColor : clrStyle.black }]}>{title}</TitleFontClass>
-                <TouchableOpacity onPress={fnc}>
-                    {SVG.sharpRightArrow(vw(6), vw(6), arrowColor ? arrowColor : clrStyle.black)}
-                </TouchableOpacity>
-            </ViewRowBetweenCenter>
-        )
-    }
-}
-
-export class TopNav3ItemWithTitle extends Component<{
-    title: string,
-    icon: any,
-    fnc: () => void,
-    customStyle?: any,
-    nav: any,
-}> {
-    render() {
-        const { title, icon, fnc, customStyle, nav } = this.props;
-        return (
-            <ViewRowBetweenCenter style={[styles.w100, styles.paddingH6vw]}>
-                <TouchableOpacity onPress={() => nav.goBack()}>
-                    {SVG.sharpLeftArrow(vw(6), vw(6), clrStyle.black)}
-                </TouchableOpacity>
-                <Inter20Bold style={[styles.paddingH2vw, styles.textCenter, { color: clrStyle.black }]}>{title}</Inter20Bold>
-                <TouchableOpacity onPress={fnc} style={[styles.padding2vw]}>
-                    {icon}
-                </TouchableOpacity>
-            </ViewRowBetweenCenter>
-        )
-    }
-}
+// export class TopNav3ItemWithTitle extends Component<{
+//     title: string,
+//     icon: any,
+//     fnc: () => void,
+//     customStyle?: any,
+//     nav: any,
+// }> {
+//     render() {
+//         const { title, icon, fnc, customStyle, nav } = this.props;
+//         return (
+//             <ViewRowBetweenCenter style={[styles.w100, styles.paddingH6vw]}>
+//                 <TouchableOpacity onPress={() => nav.goBack()}>
+//                     {SVG.sharpLeftArrow(vw(6), vw(6), clrStyle.black)}
+//                 </TouchableOpacity>
+//                 <Inter20Bold style={[styles.paddingH2vw, styles.textCenter, { color: clrStyle.black }]}>{title}</Inter20Bold>
+//                 <TouchableOpacity onPress={fnc} style={[styles.padding2vw]}>
+//                     {icon}
+//                 </TouchableOpacity>
+//             </ViewRowBetweenCenter>
+//         )
+//     }
+// }

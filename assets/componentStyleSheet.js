@@ -1,18 +1,236 @@
 import { StyleSheet } from 'react-native';
 import { vw, vh } from './stylesheet';
 import * as LOCALVARIABLE from '../Nutrition Foods_variables.json'
-import { VERCOLOR } from '../App';
 
 const clrStyle = StyleSheet.create({
     white: '#FFFFFF',
     black: '#000000',
     // ***
+    theme: {
+        Green: {
+            Mainmode: {
+                10: "rgba(100,114,28,0.10)",
+                60: "#e8f2b3",
+                80: "#c4cf8c",
+                100: "#64721c"
+            },
+            Secondary: {
+                Yellow: {
+                    60: "#f8ebcf",
+                    80: "#dfd2b6"
+                },
+                Blue: {
+                    40: "#e8fffd"
+                },
+                Red: "#e65a4b"
+            },
+            Grey: {
+                10: "#f4f5f7",
+                40: "#ecedef",
+                60: "#a09f9f",
+                100: "#6d6e6f"
+            },
+            Black: "#000000",
+            White: "#ffffff",
+            Text: {
+                Primary: "$.Maingreen.Green.Black",
+                Primary2: "$.Maingreen.Green.White",
+                Secondary: "$.Maingreen.Green.Mainmode.100",
+                subtitledark: "$.Maingreen.Green.Grey.100",
+                subtitlelight: "$.Maingreen.Green.Grey.60"
+            },
+            Background: {
+                1: "$.Maingreen.Green.White",
+                2: "$.Maingreen.Green.Mainmode.100",
+                3: "$.Maingreen.Green.Secondary.Blue.40",
+                4: "$.Maingreen.Green.Secondary.Blue.100",
+                5: "$.Maingreen.Green.Mainmode.10",
+                6: "$.Maingreen.Green.Grey.10",
+                7: "$.Maingreen.Green.Grey.100"
+            },
+            Content: {
+                dark: {
+                    1: "$.Maingreen.Green.Black",
+                    3: "$.Maingreen.Green.Secondary.Red",
+                    4: "$.Maingreen.Green.Secondary.Yellow.100",
+                    5: "$.Maingreen.Green.Mainmode.100"
+                },
+                lightbase: {
+                    st: "$.Maingreen.Green.White",
+                    nd: "$.Maingreen.Green.Grey.40"
+                },
+                lightwhite: "#ffffff"
+            },
+            Stroke: {
+                lightlight: "$.Maingreen.Green.Grey.40",
+                dark: "#ffffff",
+                light2nd: "$.Maingreen.Green.Secondary.Blue.100",
+                light2nd2: "$.Maingreen.Green.Mainmode.60",
+                grey: "$.Maingreen.Green.Grey.100"
+            }
+        },
+        Orange: {
+            Mainmode: {
+                10: "#ebe7e0",
+                60: "#f2cca8",
+                80: "#e7b788",
+                100: "#ba814d"
+            },
+            Secondary: {
+                Yellow: {
+                    60: "#f8ebcf",
+                    80: "#dfd2b6"
+                },
+                Blue: {
+                    40: "#fffdea"
+                },
+                Red: "#e65a4b"
+            },
+            Grey: {
+                10: "#f4f5f7",
+                40: "#ecedef",
+                60: "#a09f9f",
+                100: "#6d6e6f"
+            },
+            Black: "#000000",
+            White: "#ffffff",
+            Text: {
+                Primary: "$.Maingreen.Orange.Black",
+                Primary2: "#ffffff",
+                Secondary: "$.Maingreen.Orange.Mainmode.100",
+                subtitledark: "$.Maingreen.Orange.Grey.100",
+                subtitlelight: "$.Maingreen.Orange.Grey.60"
+            },
+            Background: {
+                1: "$.Maingreen.Orange.White",
+                2: "$.Maingreen.Orange.Mainmode.100",
+                3: "$.Maingreen.Orange.Secondary.Blue.40",
+                4: "$.Maingreen.Orange.Secondary.Blue.100",
+                5: "$.Maingreen.Orange.Mainmode.10",
+                6: "$.Maingreen.Orange.Grey.10",
+                7: "$.Maingreen.Orange.Grey.100"
+            },
+            Content: {
+                dark: {
+                    1: "$.Maingreen.Orange.Black",
+                    3: "$.Maingreen.Orange.Secondary.Red",
+                    4: "$.Maingreen.Orange.Secondary.Yellow.100",
+                    5: "$.Maingreen.Orange.Mainmode.100"
+                },
+                lightbase: {
+                    st: "$.Maingreen.Orange.White",
+                    nd: "$.Maingreen.Orange.Grey.40"
+                },
+                lightwhite: "#ffffff"
+            },
+            Stroke: {
+                lightlight: "$.Maingreen.Orange.Grey.40",
+                dark: "#ffffff",
+                light2nd: "$.Maingreen.Orange.Secondary.Blue.100",
+                light2nd2: "$.Maingreen.Orange.Mainmode.60",
+                grey: "$.Maingreen.Orange.Grey.100"
+            }
+        },
+        HEHE: {
+            Mainmode: {
+                10: "#ffe9f0",
+                60: "#e09fb4",
+                80: "#f5aa59",
+                100: "#918bdc"
+            },
+            Secondary: {
+                Yellow: {
+                    60: "#f8ebcf",
+                    80: "#377e23"
+                },
+                Blue: {
+                    40: "#fffdea"
+                },
+                Red: "#de5930"
+            },
+            Grey: {
+                10: "#f4f5f7",
+                40: "#ecedef",
+                60: "#a09f9f",
+                100: "#6d6e6f"
+            },
+            Black: "#000000",
+            White: "#ffffff",
+            Text: {
+                Primary: "$.Maingreen.HEHE.Black",
+                Primary2: "$.Maingreen.HEHE.White",
+                Secondary: "$.Maingreen.HEHE.Mainmode.100",
+                subtitledark: "$.Maingreen.HEHE.Grey.100",
+                subtitlelight: "$.Maingreen.HEHE.Grey.60"
+            },
+            Background: {
+                1: "$.Maingreen.HEHE.White",
+                2: "$.Maingreen.HEHE.Mainmode.100",
+                3: "$.Maingreen.HEHE.Secondary.Blue.40",
+                4: "$.Maingreen.HEHE.Secondary.Blue.100",
+                5: "$.Maingreen.HEHE.Mainmode.10",
+                6: "$.Maingreen.HEHE.Grey.10",
+                7: "$.Maingreen.HEHE.Grey.100"
+            },
+            Content: {
+                dark: {
+                    1: "$.Maingreen.HEHE.Black",
+                    3: "$.Maingreen.HEHE.Secondary.Red",
+                    4: "$.Maingreen.HEHE.Secondary.Yellow.100"
+                },
+                lightwhite: "#ffffff"
+            },
+            Stroke: {
+                lightlight: "#ffffff",
+                dark: "#ffffff",
+                light2nd: "#ffffff",
+                light2nd2: "#ffffff"
+            }
+        },
+
+        Fitness: {
+            Mainmode: {
+                10: "#ffe9f0",
+                60: "#e09fb4",
+                80: "#f5aa59"
+            },
+            Grey: {
+                10: "#f4f5f7",
+                40: "#ecedef",
+                60: "#a09f9f"
+            },
+            Black: "#ffffff",
+            White: "#191919",
+            Text: {
+                Primary: "$.Maingreen.Fitness.Black",
+                Primary2: "$.Maingreen.Fitness.Mainmode.100",
+                Secondary: "$.Maingreen.Fitness.Background.1",
+                subtitledark: "$.Maingreen.Fitness.Grey.100"
+            },
+            Background: {
+                1: "#000000",
+                2: "$.Maingreen.Fitness.White",
+                3: "$.Maingreen.Fitness.Mainmode.100",
+                4: "$.Maingreen.Fitness.Black",
+                5: "$.Maingreen.Fitness.Stroke.light2nd",
+                6: "$.Maingreen.Fitness.Stroke.light2nd2"
+            },
+            Stroke: {
+                lightlight: "$.Maingreen.Fitness.Mainmode.100",
+                dark: "$.Maingreen.Fitness.White",
+                light2nd: "rgba(241,254,83,0.30)",
+                light2nd2: "rgba(255,255,255,0.30)"
+            }
+        }
+    }
+
 });
 
 export default clrStyle;
 
 const THAOCOLOR = LOCALVARIABLE.default;
 
+const VERCOLOR = 0;
 switch (VERCOLOR) {
     case 0:
         clrStyle.primary = THAOCOLOR.primary;
