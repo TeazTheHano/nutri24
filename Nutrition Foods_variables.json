@@ -1,0 +1,237 @@
+[
+  {
+    "collection": "Main green",
+    "mode": "Green",
+    "variables": {
+      "Main mode": {
+        "10": "rgba(100, 114, 28, 0.10)",
+        "60": "#e8f2b3",
+        "80": "#c4cf8c",
+        "100": "#64721c"
+      },
+      "Sencondary": {
+        "Yellow": {
+          "60": "#f8ebcf",
+          "80": "#dfd2b6"
+        },
+        "Blue": {
+          "40": "#e8fffd"
+        },
+        "Red": "#e65a4b"
+      },
+      "Grey": {
+        "10": "#f4f5f7",
+        "40": "#ecedef",
+        "60": "#a09f9f",
+        "100": "#6d6e6f"
+      },
+      "Black": "#000000",
+      "White": "#ffffff",
+      "Text": {
+        "Primary": "$.Main green.Green.Black",
+        "Primary 2": "$.Main green.Green.White",
+        "2nd": "$.Main green.Green.Main mode.100",
+        "subtitle dark": "$.Main green.Green.Grey.100",
+        "subtitle light": "$.Main green.Green.Grey.60"
+      },
+      "Background": {
+        "1": "$.Main green.Green.White",
+        "2": "$.Main green.Green.Main mode.100",
+        "3": "$.Main green.Green.Sencondary.Blue.40",
+        "4": "$.Main green.Green.Sencondary.Blue.100",
+        "5": "$.Main green.Green.Main mode.10",
+        "6": "$.Main green.Green.Grey.10",
+        "7": "$.Main green.Green.Grey.100"
+      },
+      "Content": {
+        "dark": {
+          "1": "$.Main green.Green.Black",
+          "3": "$.Main green.Green.Sencondary.Red",
+          "4": "$.Main green.Green.Sencondary.Yellow.100",
+          "5": "$.Main green.Green.Main mode.100"
+        },
+        "light base": {
+          "1": "$.Main green.Green.White",
+          "2nd": "$.Main green.Green.Grey.40"
+        },
+        "light white": "#ffffff"
+      },
+      "Stroke": {
+        "lightlight": "$.Main green.Green.Grey.40",
+        "dark": "#ffffff",
+        "light 2nd": "$.Main green.Green.Sencondary.Blue.100",
+        "light 2nd 2": "$.Main green.Green.Main mode.60",
+        "grey": "$.Main green.Green.Grey.100"
+      }
+    }
+  },
+  {
+    "collection": "Main green",
+    "mode": "Orange",
+    "variables": {
+      "Main mode": {
+        "10": "#ebe7e0",
+        "60": "#f2cca8",
+        "80": "#e7b788",
+        "100": "#ba814d"
+      },
+      "Sencondary": {
+        "Yellow": {
+          "60": "#f8ebcf",
+          "80": "#dfd2b6"
+        },
+        "Blue": {
+          "40": "#fffdea"
+        },
+        "Red": "#e65a4b"
+      },
+      "Grey": {
+        "10": "#f4f5f7",
+        "40": "#ecedef",
+        "60": "#a09f9f",
+        "100": "#6d6e6f"
+      },
+      "Black": "#000000",
+      "White": "#ffffff",
+      "Text": {
+        "Primary": "$.Main green.Orange.Black",
+        "Primary 2": "#ffffff",
+        "2nd": "$.Main green.Orange.Main mode.100",
+        "subtitle dark": "$.Main green.Orange.Grey.100",
+        "subtitle light": "$.Main green.Orange.Grey.60"
+      },
+      "Background": {
+        "1": "$.Main green.Orange.White",
+        "2": "$.Main green.Orange.Main mode.100",
+        "3": "$.Main green.Orange.Sencondary.Blue.40",
+        "4": "$.Main green.Orange.Sencondary.Blue.100",
+        "5": "$.Main green.Orange.Main mode.10",
+        "6": "$.Main green.Orange.Grey.10",
+        "7": "$.Main green.Orange.Grey.100"
+      },
+      "Content": {
+        "dark": {
+          "1": "$.Main green.Orange.Black",
+          "3": "$.Main green.Orange.Sencondary.Red",
+          "4": "$.Main green.Orange.Sencondary.Yellow.100",
+          "5": "$.Main green.Orange.Main mode.100"
+        },
+        "light base": {
+          "1": "$.Main green.Orange.White",
+          "2nd": "$.Main green.Orange.Grey.40"
+        },
+        "light white": "#ffffff"
+      },
+      "Stroke": {
+        "lightlight": "$.Main green.Orange.Grey.40",
+        "dark": "#ffffff",
+        "light 2nd": "$.Main green.Orange.Sencondary.Blue.100",
+        "light 2nd 2": "$.Main green.Orange.Main mode.60",
+        "grey": "$.Main green.Orange.Grey.100"
+      }
+    }
+  },
+  {
+    "collection": "Main green",
+    "mode": "HEHE",
+    "variables": {
+      "Main mode": {
+        "10": "#ffe9f0",
+        "60": "#e09fb4",
+        "80": "#f5aa59",
+        "100": "#918bdc"
+      },
+      "Sencondary": {
+        "Yellow": {
+          "60": "#f8ebcf",
+          "80": "#377e23"
+        },
+        "Blue": {
+          "40": "#fffdea"
+        },
+        "Red": "#de5930"
+      },
+      "Grey": {
+        "10": "#f4f5f7",
+        "40": "#ecedef",
+        "60": "#a09f9f",
+        "100": "#6d6e6f"
+      },
+      "Black": "#000000",
+      "White": "#ffffff",
+      "Text": {
+        "Primary": "$.Main green.HEHE.Black",
+        "Primary 2": "$.Main green.HEHE.White",
+        "2nd": "$.Main green.HEHE.Main mode.100",
+        "subtitle dark": "$.Main green.HEHE.Grey.100",
+        "subtitle light": "$.Main green.HEHE.Grey.60"
+      },
+      "Background": {
+        "1": "$.Main green.HEHE.White",
+        "2": "$.Main green.HEHE.Main mode.100",
+        "3": "$.Main green.HEHE.Sencondary.Blue.40",
+        "4": "$.Main green.HEHE.Sencondary.Blue.100",
+        "5": "$.Main green.HEHE.Main mode.10",
+        "6": "$.Main green.HEHE.Grey.10",
+        "7": "$.Main green.HEHE.Grey.100"
+      },
+      "Content": {
+        "dark": {
+          "1": "$.Main green.HEHE.Black",
+          "3": "$.Main green.HEHE.Sencondary.Red",
+          "4": "$.Main green.HEHE.Sencondary.Yellow.100"
+        },
+        "light white": "#ffffff"
+      },
+      "Stroke": {
+        "lightlight": "#ffffff",
+        "dark": "#ffffff",
+        "light 2nd": "#ffffff",
+        "light 2nd 2": "#ffffff"
+      }
+    }
+  },
+  {
+    "collection": "Main green",
+    "mode": "Fitness",
+    "variables": {
+      "Main mode": {
+        "10": "#ffe9f0",
+        "60": "#e09fb4",
+        "80": "#f5aa59"
+      },
+      "Grey": {
+        "10": "#f4f5f7",
+        "40": "#ecedef",
+        "60": "#a09f9f"
+      },
+      "Black": "#ffffff",
+      "White": "#191919",
+      "Text": {
+        "Primary": "$.Main green.Fitness.Black",
+        "Primary 2": "$.Main green.Fitness.Main mode.100",
+        "2nd": "$.Main green.Fitness.Background.1",
+        "subtitle dark": "$.Main green.Fitness.Grey.100"
+      },
+      "Background": {
+        "1": "#000000",
+        "2": "$.Main green.Fitness.White",
+        "3": "$.Main green.Fitness.Main mode.100",
+        "4": "$.Main green.Fitness.Black",
+        "5": "$.Main green.Fitness.Stroke.light 2nd",
+        "6": "$.Main green.Fitness.Stroke.light 2nd 2"
+      },
+      "Stroke": {
+        "lightlight": "$.Main green.Fitness.Main mode.100",
+        "dark": "$.Main green.Fitness.White",
+        "light 2nd": "rgba(241, 254, 83, 0.30)",
+        "light 2nd 2": "rgba(255, 255, 255, 0.30)"
+      }
+    }
+  },
+  {
+    "collection": "Collection",
+    "mode": "Mode 1",
+    "variables": {}
+  }
+]
