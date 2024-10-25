@@ -242,6 +242,54 @@ export class Be20Black extends Component<{ children: React.ReactNode, style?: an
     }
 }
 
+export class Be22Reg extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
+    render() {
+        const { children, style, lineNumber } = this.props;
+
+        return (
+            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'BeVietnamPro-Regular', fontSize: vw(5.5) }, style]}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Be22Med extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
+    render() {
+        const { children, style, lineNumber } = this.props;
+
+        return (
+            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'BeVietnamPro-Medium', fontSize: vw(5.5) }, style]}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Be22Bold extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
+    render() {
+        const { children, style, lineNumber } = this.props;
+
+        return (
+            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'BeVietnamPro-Bold', fontSize: vw(5.5) }, style]}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Be22Black extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
+    render() {
+        const { children, style, lineNumber } = this.props;
+
+        return (
+            <Text numberOfLines={lineNumber} style={[{ fontFamily: 'BeVietnamPro-Black', fontSize: vw(5.5) }, style]}>
+                {children}
+            </Text>
+        );
+    }
+}
+
 export class Be24Reg extends Component<{ children: React.ReactNode, style?: any, lineNumber?: number }> {
     render() {
         const { children, style, lineNumber } = this.props;

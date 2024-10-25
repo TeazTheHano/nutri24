@@ -40,7 +40,14 @@ export default function Onboard() {
     };
 
     React.useEffect(() => {
-        animate(step);
+        if (step == 4) {
+            return navigation.reset({
+                index: 0,
+                routes: [{ name: 'Login' as never }]
+            });
+        } else {
+            animate(step);
+        }
     }, [step]);
 
     class StepBar extends React.Component<{ step: number }> {
@@ -70,9 +77,10 @@ export default function Onboard() {
         render(): React.ReactNode {
             return (
                 <Class.ViewColBetweenCenter style={[styles.flex1, styles.paddingTop10vw]}>
-                    <Image source={this.props.img} style={[styles.w70, styles.alignSelfCenter, styles.h50vh, { resizeMode: 'contain' }] as ImageStyle} />
-                    <StepBar step={step} />
-
+                    <View style={[styles.w100]}>
+                        <Image source={this.props.img} style={[styles.w70, styles.alignSelfCenter, styles.h50vh, { resizeMode: 'contain' }] as ImageStyle} />
+                        <StepBar step={step} />
+                    </View>
                     <Class.ViewColCenter style={[styles.w100, styles.gap2vw]}>
                         <Be24Med style={[styles.textCenter, styles.w60vw, { color: clrStyle.black }]}>{this.props.title}</Be24Med>
                         <Be16Reg style={[styles.marginHorizontal8vw, styles.textCenter]}>{this.props.subtitle}</Be16Reg>
@@ -118,9 +126,6 @@ export default function Onboard() {
                 return <OnboardClass img={onbData[1][0]} title={onbData[1][1]} subtitle={onbData[1][2]} />
             case 3:
                 return <OnboardClass img={onbData[2][0]} title={onbData[2][1]} subtitle={onbData[2][2]} />
-            case 4:
-                navigation.navigate('Login' as never)
-                break;
             default:
                 break;
         }

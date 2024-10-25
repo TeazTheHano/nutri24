@@ -274,6 +274,17 @@ export const rightLongArrow = (w: any = '100%', h: any = '100%', color?: any) =>
     )
 }
 
+export const leftLongArrow = (w: any = '100%', h: any = '100%', color?: any) => {
+    const xml = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12L6 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10 17L5 12L10 7" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`
+    return (
+        <SvgXml xml={xml} width={w} height={h} />
+    )
+}
+
 
 // export const NAME = (w: any = '100%', h: any = '100%', color?:any) => {
 //     const xml = ``

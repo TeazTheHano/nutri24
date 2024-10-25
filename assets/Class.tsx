@@ -15,6 +15,7 @@ import clrStyle, { NGHIASTYLE } from './componentStyleSheet';
 import { useNavigation } from '@react-navigation/native';
 import { CurrentCache } from '../data/store';
 import * as FormatData from '../data/interfaceFormat';
+import * as CTEXT from './CustomText';
 
 // other import
 
@@ -360,20 +361,6 @@ interface SearchBoxState {
 
 }
 
-export class TopNav2 extends Component<{
-    containerStyle?: any
-    backGoundImage: any
-}> {
-    render() {
-        let { containerStyle, backGoundImage } = this.props
-        return (
-            <View style={[containerStyle, styles.bgcolorWhite, { containerStyle }]}>
-                <Image source={backGoundImage} resizeMethod='resize' resizeMode='cover' style={[styles.flex1, styles.alignSelfCenter] as ImageStyle} />
-            </View>
-        )
-    }
-}
-
 // export class BoardingInput extends Component<{
 //     title: string,
 //     supFncTitle?: string,
@@ -530,3 +517,31 @@ export class ProcessBarSelfMade extends Component<{
 //         )
 //     }
 // }
+
+export class TopNav3ItemWithTitle extends Component<{
+    title?: string,
+    nav?: any,
+    customStyle?: any,
+    showBack?: boolean,
+    iconRight?: any,
+    fnc?: () => void,
+}> {
+    render() {
+        return (
+            <ViewRowBetweenCenter style={[styles.w100, styles.gap2vw, styles.paddingH6vw, this.props.customStyle]}>
+                {this.props.showBack ?
+                    <TouchableOpacity
+                        onPress={() => this.props.nav.goBack()}
+                        style={[styles.borderRadius100, styles.padding3vw, { backgroundColor: clrStyle.theme.Green.Grey[10] }]}>
+                        {SVG.leftLongArrow(vw(6), vw(6))}
+                    </TouchableOpacity> : null}
+                <CTEXT.Be22Med style={{ color: clrStyle.black }}>{this.props.title}</CTEXT.Be22Med>
+                {this.props.iconRight ? <TouchableOpacity
+                    onPress={this.props.fnc}
+                    style={[styles.borderRadius100, styles.padding3vw, { backgroundColor: clrStyle.theme.Green.Grey[10] }]}>
+                    {this.props.iconRight}
+                </TouchableOpacity> : null}
+            </ViewRowBetweenCenter>
+        )
+    }
+}
