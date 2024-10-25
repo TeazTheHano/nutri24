@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { vw, vh } from './stylesheet';
 import * as LOCALVARIABLE from '../Nutrition Foods_variables.json'
 
-const clrStyle = StyleSheet.create({
+const clrStyle = {
     white: '#FFFFFF',
     black: '#000000',
     // ***
@@ -224,7 +224,7 @@ const clrStyle = StyleSheet.create({
         }
     }
 
-});
+}
 
 export default clrStyle;
 

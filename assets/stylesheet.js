@@ -150,6 +150,10 @@ const styles = StyleSheet.create({
         width: vw(0),
     },
 
+    wm30vw: {
+        minWidth: vw(30),
+    },
+
     // height = width
     hAuto: {
         height: 'auto',

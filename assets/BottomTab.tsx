@@ -82,7 +82,10 @@ const BottomTab = () => {
             if (user && user.name) {
                 dispatch(CUSTOMCACHE.currentSetUser(user));
             } else {
-                navigation.navigate('Onboard' as never);
+                navigation.reset({
+                    index: 0,
+                    routes: [{ name: 'Onboard' as never }],
+                });
             }
         };
         fetchUser();

@@ -4,7 +4,6 @@ import { View } from "react-native";
 
 // style import
 import Svg, { SvgUri, SvgXml } from 'react-native-svg';
-import { Nunito12Bold, Nunito12Reg } from "./Class";
 import clrStyle from "./componentStyleSheet";
 import styles from "./stylesheet";
 
@@ -264,6 +263,17 @@ export const save = (w: any = '100%', h: any = '100%', color?: any) => {
         <SvgXml xml={xml} width={w} height={h} />
     )
 }
+
+export const rightLongArrow = (w: any = '100%', h: any = '100%', color?: any) => {
+    const xml = `<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.5 12.5L18.5 12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.5 7.5L19.5 12.5L14.5 17.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`
+    return (
+        <SvgXml xml={xml} width={w} height={h} />
+    )
+}
+
 
 // export const NAME = (w: any = '100%', h: any = '100%', color?:any) => {
 //     const xml = ``

@@ -4,13 +4,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { ProviderTotal } from './data/store';
+import clrStyle from './assets/componentStyleSheet';
+import { ColorValue } from 'react-native';
 
 // screen import
 import Onboard from './screens/Onboard';
 import DataCollect from './screens/DataCollect';
-import clrStyle from './assets/componentStyleSheet';
-import { ColorValue } from 'react-native';
-
+import Login from './screens/Login';
 import BottomTab from './assets/BottomTab';
 import Home from './screens/Home';
 import Podcast from './screens/Podcast';
@@ -27,9 +27,9 @@ function App(): React.JSX.Element {
     <ProviderTotal>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false, contentStyle: { backgroundColor: clrStyle.white as ColorValue } }}>
-          {/* <Stack.Screen name="BottomTab" component={BottomTab} /> */}
           <Stack.Screen name="BottomTab" component={BottomTab} />
           <Stack.Screen name="Onboard" component={Onboard} />
+          <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="DataCollect" component={DataCollect} />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Podcast" component={Podcast} />
