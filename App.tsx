@@ -13,12 +13,12 @@ import DataCollect from './screens/DataCollect';
 import Login from './screens/Login';
 import BottomTab from './assets/BottomTab';
 import Home from './screens/Home';
-import Podcast from './screens/Podcast';
-import Explore from './screens/Explore';
+import CatePage from './screens/CatePage';
+import FormularPage from './screens/FormularPage';
 import User from './screens/User';
 // >>>>>>>>>>
 import BlogView from './screens/BlogView';
-
+import CreateRecipe from './screens/CreateRecipe';
 // ____________________END OF IMPORT_______________________
 
 const Stack = createNativeStackNavigator();
@@ -32,11 +32,12 @@ function App(): React.JSX.Element {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="DataCollect" component={DataCollect} />
           <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Podcast" component={Podcast} />
-          <Stack.Screen name="Explore" component={Explore} />
+          <Stack.Screen name="CatePage" component={CatePage} />
+          <Stack.Screen name="FormularPage" component={FormularPage} />
           <Stack.Screen name="User" component={User} />
           {/* >>>> */}
           <Stack.Screen name="BlogView" component={BlogView} />
+          <Stack.Screen name="CreateRecipe" component={CreateRecipe} />
         </Stack.Navigator>
       </NavigationContainer>
     </ProviderTotal>

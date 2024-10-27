@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native'
 import clrStyle, { NGHIASTYLE } from '../assets/componentStyleSheet'
 import { Be16Reg, Be18Med, Be24Med, Play40Black } from '../assets/CustomText'
 import { rightLongArrow } from '../assets/svgXml'
+import getColor from '../assets/getColor'
 
 export default function Onboard() {
     const navigation = useNavigation();
@@ -41,10 +42,8 @@ export default function Onboard() {
 
     React.useEffect(() => {
         if (step == 4) {
-            return navigation.reset({
-                index: 0,
-                routes: [{ name: 'Login' as never }]
-            });
+            setStep(3)
+            return navigation.navigate('Login' as never);
         } else {
             animate(step);
         }
@@ -61,7 +60,7 @@ export default function Onboard() {
                         });
                         const colorAnimate = colorAnimates[index].interpolate({
                             inputRange: [0, 1],
-                            outputRange: [clrStyle.theme.Green.Grey[100], clrStyle.theme.Green.Mainmode[100]]
+                            outputRange: [getColor('Grey/100') as string, getColor('Main mode/100') as string]
                         });
 
                         return (
@@ -88,14 +87,14 @@ export default function Onboard() {
 
                     <Class.ViewColCenter style={[styles.marginVertical4vw, styles.paddingBottom8vw, styles.gap3vw]}>
                         <TouchableOpacity onPress={() => { setStep(step + 1) }}
-                            style={[styles.flexRowCenter, styles.gap2vw, styles.padding3vw, styles.wm30vw, styles.borderRadius2vw, { backgroundColor: clrStyle.theme.Green.Mainmode[100] }]}>
+                            style={[styles.flexRowCenter, styles.gap2vw, styles.padding3vw, styles.wm30vw, styles.borderRadius2vw, { backgroundColor: getColor('Main mode/100') }]}>
                             <Be18Med style={{ color: clrStyle.white }}>{step == onbData.length ? `Bắt đầu` : `Tiếp`}</Be18Med>
                             {rightLongArrow(vw(4), vw(4))}
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => { setStep(step + 3) }}
                             style={[styles.flexRowCenter, styles.gap2vw, styles.padding3vw, styles.wm30vw, styles.borderRadius2vw, { backgroundColor: clrStyle.white, opacity: step == onbData.length ? 0 : 1 }]}>
-                            <Be18Med style={{ color: clrStyle.theme.Green.Mainmode[100] }}>Bỏ qua</Be18Med>
+                            <Be18Med style={{ color: getColor('Main mode/100') }}>Bỏ qua</Be18Med>
                         </TouchableOpacity>
                     </Class.ViewColCenter>
                 </Class.ViewColBetweenCenter>
@@ -115,8 +114,8 @@ export default function Onboard() {
                             <Image source={require('../assets/photos/onboard.png')} style={[styles.w80vw, styles.h50vh, { resizeMode: 'contain' }] as ImageStyle} />
                         </View>
                         <Class.ViewColCenter style={[styles.paddingV4vw, styles.h30vh, styles.marginBottom10vw]}>
-                            <Play40Black style={[styles.textCenter, { color: clrStyle.theme.Green.Mainmode[80] }]}>Nutrition</Play40Black>
-                            <Play40Black style={[styles.textCenter, { color: clrStyle.theme.Green.Mainmode[80] }]}>Foods</Play40Black>
+                            <Play40Black style={[styles.textCenter, { color: getColor('Main mode/80') }]}>Nutrition</Play40Black>
+                            <Play40Black style={[styles.textCenter, { color: getColor('Main mode/80') }]}>Foods</Play40Black>
                         </Class.ViewColCenter>
                     </TouchableOpacity>
                 )

@@ -16,6 +16,7 @@ import { useNavigation } from '@react-navigation/native';
 import { CurrentCache } from '../data/store';
 import * as FormatData from '../data/interfaceFormat';
 import * as CTEXT from './CustomText';
+import getColor from './getColor';
 
 // other import
 
@@ -532,16 +533,39 @@ export class TopNav3ItemWithTitle extends Component<{
                 {this.props.showBack ?
                     <TouchableOpacity
                         onPress={() => this.props.nav.goBack()}
-                        style={[styles.borderRadius100, styles.padding3vw, { backgroundColor: clrStyle.theme.Green.Grey[10] }]}>
+                        style={[styles.borderRadius100, styles.padding3vw, { backgroundColor: getColor('Grey/10') }]}>
                         {SVG.leftLongArrow(vw(6), vw(6))}
                     </TouchableOpacity> : null}
                 <CTEXT.Be22Med style={{ color: clrStyle.black }}>{this.props.title}</CTEXT.Be22Med>
                 {this.props.iconRight ? <TouchableOpacity
                     onPress={this.props.fnc}
-                    style={[styles.borderRadius100, styles.padding3vw, { backgroundColor: clrStyle.theme.Green.Grey[10] }]}>
+                    style={[styles.borderRadius100, styles.padding3vw, { backgroundColor: getColor('Grey/10') }]}>
                     {this.props.iconRight}
                 </TouchableOpacity> : null}
             </ViewRowBetweenCenter>
         )
     }
+}
+
+export const Input: React.FC<{
+    value: string
+    onChange: (text: string) => void
+    placeHolder?: string
+    icon?: any
+    otherOption?: TextInputProps
+}> = ({ value, onChange, placeHolder, icon, otherOption }) => {
+    return (
+        <ViewRowStartCenter style={[styles.border2, styles.borderRadius2vw, styles.paddingV2vw, styles.paddingH4vw, { borderColor: getColor('Grey/40') }]}>
+            {icon}
+            <TextInput
+                placeholderTextColor={getColor('Grey/100')}
+                onChangeText={onChange}
+                placeholder={placeHolder}
+                style={[styles.padding2vw, styles.marginLeft2vw, styles.flex1,]}
+                {...otherOption}
+            >
+                <CTEXT.Be16Reg style={{ color: clrStyle.black }}>{value}</CTEXT.Be16Reg>
+            </TextInput>
+        </ViewRowStartCenter>
+    )
 }

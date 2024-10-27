@@ -186,6 +186,138 @@ export function formatNumber(num: number, changeToChar: boolean = true) {
     }
 }
 
+/**
+ * 
+ * @param email 
+ * @param password 
+ * @param navigation 
+ * @param signInWithEmailAndPassword 
+ * @param auth 
+ * @param dispatch 
+ * @param setUser 
+ * @param saveUser 
+ * @returns 
+ */
+export async function LoginWithFirebaseHandle(
+    email: string,
+    password: string,
+    navigation: any,
+    signInWithEmailAndPassword: (auth: any, email: string, password: string) => Promise<any>,
+    auth: any,
+    dispatch: (action: any) => void,
+    setUser: (user: any) => any,
+    saveUser: (user: any) => void
+) {
+    email = email.trim();
+    password = password.trim();
+    if (email === '' || password === '') {
+        return Alert.alert('Vui lòng điền đủ thông tin');
+    }
+    try {
+        await signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential;
+
+                if (user.user.email) {
+                    let userObj = {
+                        email: user.user.email,
+                        name: user.user.displayName ? user.user.displayName : user.user.email,
+                        password: password,
+                        imgAddress: user.user.photoURL ? user.user.photoURL : ''
+                    }
+                    saveUser(userObj)
+                    dispatch(setUser(userObj));
+                } else {
+                    return Alert.alert('Email hoặc mật khẩu bạn nhập chưa đúng')
+                }
+            }).then(() => {
+                return navigation.navigate('BottomTab' as never)
+            })
+    } catch (error) {
+        console.log(error)
+        return Alert.alert('Email hoặc mật khẩu bạn nhập chưa đúng')
+    }
+}
+
+
+/**
+ * Registers a user with Firebase, updates the user profile, saves the user data, and navigates to the 'BottomTab' screen.
+ *
+ * @param {any} navigation - The navigation object used to navigate between screens.
+ * @param {(auth: any, email: string, password: string) => Promise<any>} createUserWithEmailAndPassword - Function to create a user with email and password.
+ * @param {(user: any, profile: any) => Promise<any>} updateProfile - Function to update the user profile.
+ * @param {any} auth - The Firebase authentication object.
+ * @param {(action: any) => void} dispatch - Function to dispatch actions to the Redux store.
+ * @param {(user: any) => any} setUser - Function to set the user in the Redux store.
+ * @param {(user: any) => void} saveUser - Function to save the user data.
+ * @param {string} email - The email of the user.
+ * @param {string} userName - The name of the user.
+ * @param {string} password - The password of the user.
+ * @param {...{ [key: string]: any }[]} params - Additional parameters to be merged into the user object.
+ * @returns {Promise<void>} A promise that resolves when the registration process is complete.
+ * @throws Will throw an error if the registration process fails.
+ */
+export async function RegisterWithFirebaseHandle(
+    navigation: any,
+    createUserWithEmailAndPassword: (auth: any, email: string, password: string) => Promise<any>,
+    updateProfile: (user: any, profile: any) => Promise<any>,
+    auth: any,
+    dispatch: (action: any) => void,
+    setUser: (user: any) => any,
+    saveUser: (user: any) => void,
+    email: string,
+    userName: string,
+    password: string,
+    ...params: { [key: string]: any }[]
+) {
+    try {
+        // TODO: firebase auth
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                let user = auth.currentUser;
+                const avtURL = params.find(param => param.hasOwnProperty('avtURL'))?.avtURL || '';
+                if (user && avtURL) {
+                    updateProfile(user, {
+                        displayName: userName,
+                        photoURL: avtURL,
+                    })
+                        .then(() => {
+                            console.log("User profile updated.");
+                        })
+                        .catch((error) => {
+                            console.error("Error updating profile:", error);
+                        });
+                }
+            })
+            .then(() => {
+                /**
+                 * Creates a user object with the provided email, name, password, and additional parameters.
+                 *
+                 * @param {string} email - The email of the user.
+                 * @param {string} userName - The name of the user.
+                 * @param {string} password - The password of the user.
+                 * @param {Array<Object>} params - An array of additional parameters to be merged into the user object.
+                 * @returns {Object} The user object containing email, name, password, and additional parameters.
+                 */
+                let user = {
+                    email: email,
+                    name: userName,
+                    password: password,
+                    ...params.reduce((acc, param) => ({ ...acc, ...param }), {})
+                }
+                saveUser(user)
+                dispatch(setUser(user));
+            })
+            .then(() => {
+                return navigation.navigate('BottomTab' as never)
+            })
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 // export async function searchEngine(keyword: string, dataBank: SetFormat[] | Desk[] | Card[], type: 'set' | 'desk' | 'card') {
 //     keyword = keyword.trim();
 //     let result: SetFormat[] | Desk[] | Card[] = [];

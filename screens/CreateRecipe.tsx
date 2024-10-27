@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function Podcast() {
+export default function CreateRecipe() {
   return (
     <View>
-      <Text>Podcast</Text>
+      <Text>CreateRecipe</Text>
     </View>
   )
 }
