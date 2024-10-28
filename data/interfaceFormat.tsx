@@ -78,5 +78,5 @@ export interface MealFormat {
 
 export interface CateFoodFormat {
     name: string;
-    items: { itemName: string, itemKcal: number }[];
+    items: string[];
 }

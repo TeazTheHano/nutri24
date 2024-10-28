@@ -297,6 +297,15 @@ export const createRecipe = (w: any = '100%', h: any = '100%', color?: any) => {
     )
 }
 
+export const downArrow = (w: any = '100%', h: any = '100%', color?: any) => {
+    const xml = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 15.01C11.81 15.01 11.62 14.94 11.47 14.79L7.93997 11.26C7.64997 10.97 7.64997 10.49 7.93997 10.2C8.22997 9.91004 8.70997 9.91004 8.99997 10.2L12 13.2L15 10.2C15.29 9.91004 15.77 9.91004 16.06 10.2C16.35 10.49 16.35 10.97 16.06 11.26L12.53 14.79C12.38 14.94 12.19 15.01 12 15.01Z" fill="${color ? color : 'black'}"/>
+</svg>`
+    return (
+        <SvgXml xml={xml} width={w} height={h} />
+    )
+}
+
 // export const NAME = (w: any = '100%', h: any = '100%', color?:any) => {
 //     const xml = ``
 //     return (

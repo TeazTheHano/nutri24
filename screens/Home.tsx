@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableOpacity, Image, ImageStyle } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, Image, ImageStyle, FlatList } from 'react-native'
 import React, { useContext, useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import * as CLASS from '../assets/Class'
@@ -128,6 +128,71 @@ export default function Home() {
                             <CTEXT.Be14Reg style={{ color: getColor('Grey/100') }}>{CurrentCache.todayNutri.fat}g</CTEXT.Be14Reg>
                         </CLASS.ViewCol>
                     </CLASS.ViewColStartBetween>
+                </CLASS.ViewRowBetweenCenter>
+
+                <CLASS.ViewRowBetweenCenter style={[styles.borderRadius4vw, styles.padding3vw, styles.paddingH6vw, styles.marginTop4vw, { backgroundColor: getColor('Main mode/10') }]}>
+                    <CTEXT.Be14Reg style={{ color: getColor('Content/dark/1') }}>Kế hoạch dinh dưỡng</CTEXT.Be14Reg>
+                    <TouchableOpacity style={[styles.borderRadius100, styles.paddingH6vw, styles.paddingV2vw, { backgroundColor: getColor('Main mode/100') }]}>
+                        <CTEXT.Be12Reg style={{ color: getColor('Content/light white') }}>Xem</CTEXT.Be12Reg>
+                    </TouchableOpacity>
+                </CLASS.ViewRowBetweenCenter>
+
+                <CLASS.ViewRowBetweenCenter style={[styles.marginVertical4vw]}>
+                    <CTEXT.Be20Med>Danh mục</CTEXT.Be20Med>
+                    <TouchableOpacity
+                        onPress={() => { }}
+                        style={[styles.flexRowCenter]}>
+                        <CTEXT.Be16Med color={getColor('Main mode/100')}>Xem thêm</CTEXT.Be16Med>
+                        {SVG.downArrow(vw(6), vw(6), getColor('Main mode/100'))}
+                    </TouchableOpacity>
+                </CLASS.ViewRowBetweenCenter>
+
+                {/* TODO: update */}
+                <FlatList
+                    data={factoryData.cateList}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => {
+                        return (
+                            <TouchableOpacity
+                                onPress={() => { }}
+                                style={[styles.marginRight4vw, styles.padding4vw, styles.borderRadius4vw, { backgroundColor: getColor('Background/6') }]}>
+                                {/* <Image source={item.imgAddress} style={[styles.w100, styles.h100, styles.borderRadius4vw]} /> */}
+                                <CTEXT.Be16Med style={[styles.marginTop2vw, { color: getColor('Content/dark/1') }]}>{item.name}</CTEXT.Be16Med>
+                            </TouchableOpacity>
+                        )
+                    }}
+                />
+
+                <CLASS.ViewRowBetweenCenter style={[styles.marginVertical4vw]}>
+                    <CTEXT.Be20Med>Công thức nấu ăn</CTEXT.Be20Med>
+                    <TouchableOpacity
+                        onPress={() => { }}
+                        style={[styles.flexRowCenter]}>
+                        <CTEXT.Be16Med color={getColor('Main mode/100')}>Xem thêm</CTEXT.Be16Med>
+                        {SVG.downArrow(vw(6), vw(6), getColor('Main mode/100'))}
+                    </TouchableOpacity>
+                </CLASS.ViewRowBetweenCenter>
+
+                <CLASS.ViewRowBetweenCenter style={[styles.marginVertical4vw]}>
+                    <CTEXT.Be20Med>Xu hướng</CTEXT.Be20Med>
+                    <TouchableOpacity
+                        onPress={() => { }}
+                        style={[styles.flexRowCenter]}>
+                        <CTEXT.Be16Med color={getColor('Main mode/100')}>Xem thêm</CTEXT.Be16Med>
+                        {SVG.downArrow(vw(6), vw(6), getColor('Main mode/100'))}
+                    </TouchableOpacity>
+                </CLASS.ViewRowBetweenCenter>
+
+                <CLASS.ViewRowBetweenCenter style={[styles.marginVertical4vw]}>
+                    <CTEXT.Be20Med>Vận động</CTEXT.Be20Med>
+                    <TouchableOpacity
+                        onPress={() => { }}
+                        style={[styles.flexRowCenter]}>
+                        <CTEXT.Be16Med color={getColor('Main mode/100')}>Xem thêm</CTEXT.Be16Med>
+                        {SVG.downArrow(vw(6), vw(6), getColor('Main mode/100'))}
+                    </TouchableOpacity>
                 </CLASS.ViewRowBetweenCenter>
             </ScrollView>
         </CLASS.SSBarWithSaveArea >

@@ -8,6 +8,16 @@ export const factoryData: {
     cateList?: FormatData.CateFoodFormat[];
     targetNutri: FormatData.NutriFormat;
 } = {
+    cateList: [
+        {
+            name: 'Rau củ',
+            items: ['Cà chua', 'Cà rốt', 'Dưa leo', 'Hành tây', 'Rau mùi']
+        },
+        {
+            name: 'Thịt cá',
+            items: ['Cá hồi', 'Cá thu', 'Cá ngừ', 'Cá chép', 'Cá trê']
+        }
+    ],
     targetNutri: {
         calo: 2500,
         carb: 300,
