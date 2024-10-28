@@ -1,6 +1,6 @@
 // system import
 import React, { Component, ComponentType, useState } from 'react';
-import { ImageBackground, Platform, SafeAreaView, StatusBar, Text, TextInput, TouchableOpacity, View, Image, ImageStyle, StatusBarStyle, ReturnKeyType, KeyboardType, FlatList, TextInputProps, Animated, Easing } from 'react-native';
+import { ImageBackground, Platform, SafeAreaView, StatusBar, Text, TextInput, TouchableOpacity, View, Image, ImageStyle, StatusBarStyle, ReturnKeyType, KeyboardType, FlatList, TextInputProps, Animated, Easing, TouchableOpacityProps } from 'react-native';
 
 // style import
 import styles from './stylesheet';
@@ -295,13 +295,15 @@ export class RoundBtn extends Component<{
     border?: boolean
     borderColor?: string
     customStyle?: any
+    otherTouchProps?: TouchableOpacityProps
 }> {
     render() {
-        const { icon, title, onPress, bgColor, textClass, textColor, iconColor, border, borderColor, customStyle } = this.props;
+        const { icon, title, onPress, bgColor, textClass, textColor, iconColor, border, borderColor, customStyle, otherTouchProps } = this.props;
         let TextClass = textClass ? textClass : Text
         return (
             <TouchableOpacity
                 onPress={onPress}
+                {...otherTouchProps}
                 style={[styles.flexRow, styles.w100, styles.alignItemsCenter, styles.padding4vw, styles.gap3vw, styles.borderRadius10, styles.overflowHidden, { backgroundColor: bgColor ? bgColor : undefined, borderWidth: border ? 1 : 0, }, customStyle]}>
                 {icon ? icon : null}
                 <TextClass style={[{ color: textColor ? textColor : clrStyle.black as string }]}>{title}</TextClass>
@@ -310,6 +312,34 @@ export class RoundBtn extends Component<{
     }
 }
 
+/**
+ * A React component that renders a customizable search box.
+ * 
+ * @class SearchBox
+ * @extends {Component}
+ * 
+ * @prop {any} [customStyle] - Custom styles to be applied to the search box.
+ * @prop {string} [placeholder] - Placeholder text for the search input.
+ * @prop {any} [placeholderTextColor] - Color of the placeholder text.
+ * @prop {string} value - The current value of the search input.
+ * @prop {(input: any) => void} [onChangeText] - Callback function to handle text changes in the search input.
+ * @prop {() => void} [onClear] - Callback function to handle clearing the search input.
+ * @prop {boolean} [showSearchIcon] - Flag to show or hide the search icon.
+ * @prop {string} [fontFam] - Font family to be used for the search input text.
+ * @prop {CurrentCache} [currentCache] - Cache object for current search context.
+ * 
+ * @method render
+ * Renders the search box component.
+ * 
+ * @function searchEngine
+ * An asynchronous function to perform search operations.
+ * 
+ * @param {string} keyword - The keyword to search for.
+ * @param {any} dataBank - The data bank to search within.
+ * @param {'set' | 'desk' | 'card'} type - The type of search to perform.
+ * 
+ * @returns {Promise<any[]>} - A promise that resolves to an array of search results.
+ */
 export class SearchBox extends Component<{
     customStyle?: any
     placeholder?: string
@@ -318,6 +348,7 @@ export class SearchBox extends Component<{
     onChangeText?: (input: any) => void
     onClear?: () => void
     showSearchIcon?: boolean
+    icon?: any
     fontFam?: string
     currentCache?: CurrentCache
 }> {
@@ -337,7 +368,7 @@ export class SearchBox extends Component<{
         return (
             <ViewRowBetweenCenter
                 style={[styles.gap3vw, styles.borderRadius10, styles.paddingH4vw, { backgroundColor: clrStyle.white, borderColor: clrStyle.black }, customStyle]}>
-                {showSearchIcon ? SVG.searchIcon(vw(5), vw(5), clrStyle.black) : null}
+                {showSearchIcon ? this.props.icon ? this.props.icon : SVG.searchIcon(vw(5), vw(5), clrStyle.black) : null}
                 <TextInput
                     style={[styles.flex1, styles.paddingV2vw, { color: clrStyle.black as string, fontSize: vw(3.5), fontFamily: fontFam ? fontFam : undefined }]}
                     value={value}

@@ -37,8 +37,8 @@ export default function Login() {
         return (
             <CLASS.ViewColStartCenter style={[styles.flex1, styles.gap4vw, styles.paddingH4vw,]}>
                 <CTEXT.Play30Reg style={[styles.gap2vw, styles.marginBottom4vw, styles.textCenter]}>Đăng nhập</CTEXT.Play30Reg>
-                <CLASS.Input value={email} onChange={setEmail} placeHolder='Email' icon={<SvgXml xml={mailIcon} width={vw(6)} height={vw(6)} />} otherOption={{ autoCapitalize: 'none', keyboardType: 'email-address', }} />
-                <CLASS.Input value={passWord} onChange={setPassWord} placeHolder='Mật khẩu' icon={<SvgXml xml={passIcon} width={vw(6)} height={vw(6)} />} otherOption={{ autoCapitalize: 'none', keyboardType: 'visible-password', secureTextEntry:true}} />
+                <CLASS.Input value={email} onChange={setEmail} placeHolder='Email' icon={<SvgXml xml={mailIcon} width={vw(6)} height={vw(6)} />} otherOption={{ autoCapitalize: 'none', keyboardType: 'email-address', textContentType: 'emailAddress' }} />
+                <CLASS.Input value={passWord} onChange={setPassWord} placeHolder='Mật khẩu' icon={<SvgXml xml={passIcon} width={vw(6)} height={vw(6)} />} otherOption={{ autoCapitalize: 'none', textContentType: 'password', secureTextEntry: true }} />
                 <TouchableOpacity
                     onPress={() => Alert.alert('Vui lòng liên hệ với chúng tôi để lấy lại mật khẩu')}
                     style={[styles.alignSelfStart]}>
@@ -60,11 +60,11 @@ export default function Login() {
     const Register = () => {
         return (
             <CLASS.ViewColStartCenter style={[styles.flex1, styles.gap4vw, styles.paddingH4vw,]}>
-                <CTEXT.Play30Reg style={[styles.gap2vw, styles.marginBottom4vw, styles.textCenter]}>Đăng nhập</CTEXT.Play30Reg>
-                <CLASS.Input value={useName} onChange={setUseName} placeHolder='Tên đăng nhập' icon={<View style={[styles.borderRadius100, styles.margin1vw, { backgroundColor: getColor('Main mode/100'), width: vw(4), height: vw(4) }]} />} otherOption={{autoCapitalize:'words'}}/>
-                <CLASS.Input value={email} onChange={setEmail} placeHolder='Email' icon={<SvgXml xml={mailIcon} width={vw(6)} height={vw(6)} />} otherOption={{ autoCapitalize: 'none', keyboardType: 'email-address', }} />
-                <CLASS.Input value={passWord} onChange={setPassWord} placeHolder='Mật khẩu' icon={<SvgXml xml={passIcon} width={vw(6)} height={vw(6)} />} otherOption={{ autoCapitalize: 'none', keyboardType: 'visible-password', secureTextEntry:true}} />
-                <CLASS.Input value={rePassWord} onChange={setRePassWord} placeHolder='Nhập lại mật khẩu' icon={<SvgXml xml={passIcon} width={vw(6)} height={vw(6)} />} otherOption={{ autoCapitalize: 'none', keyboardType: 'visible-password', secureTextEntry:true}} />
+                <CTEXT.Play30Reg style={[styles.gap2vw, styles.marginBottom4vw, styles.textCenter]}>Đăng ký</CTEXT.Play30Reg>
+                <CLASS.Input value={useName} onChange={setUseName} placeHolder='Tên đăng nhập' icon={<View style={[styles.borderRadius100, styles.margin1vw, { backgroundColor: getColor('Main mode/100'), width: vw(4), height: vw(4) }]} />} otherOption={{ autoCapitalize: 'words' }} />
+                <CLASS.Input value={email} onChange={setEmail} placeHolder='Email' icon={<SvgXml xml={mailIcon} width={vw(6)} height={vw(6)} />} otherOption={{ autoCapitalize: 'none', keyboardType: 'email-address', textContentType: 'emailAddress' }} />
+                <CLASS.Input value={passWord} onChange={setPassWord} placeHolder='Mật khẩu' icon={<SvgXml xml={passIcon} width={vw(6)} height={vw(6)} />} otherOption={{ autoCapitalize: 'none', textContentType: 'password', secureTextEntry: true }} />
+                <CLASS.Input value={rePassWord} onChange={setRePassWord} placeHolder='Nhập lại mật khẩu' icon={<SvgXml xml={passIcon} width={vw(6)} height={vw(6)} />} otherOption={{ autoCapitalize: 'none', textContentType: 'password', secureTextEntry: true }} />
                 <TouchableOpacity
                     onPress={() => setLetAgree(!letAgree)}
                     style={[styles.marginVertical2vw, styles.flexRowCenter, styles.gap3vw]}>
@@ -72,6 +72,7 @@ export default function Login() {
                     <CTEXT.Be16Reg style={[styles.flex1, { color: getColor('Grey/60') }]}>Đồng ý với mọi điều khoản về thông tin và bảo mật của ứng dụng</CTEXT.Be16Reg>
                 </TouchableOpacity>
                 <CLASS.RoundBtn
+                    otherTouchProps={{ disabled: !letAgree }}
                     onPress={handleRegister}
                     title='Đăng ký' bgColor={getColor('Main mode/100')} textClass={CTEXT.Be16Med} textColor='white' customStyle={[styles.paddingV6vw, styles.justifyContentCenter, styles.borderRadius2vw]} />
                 <View style={[styles.flex1]} />

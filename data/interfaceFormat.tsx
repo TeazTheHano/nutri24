@@ -1,67 +1,82 @@
 export interface UserFormat {
     name: string;
     age: string;
-    imgAddress: string;
+    imgAddress: ImgAddressFormat | string;
+    email: string;
 }
 
-export interface AuthorFormat {
-    id: number;
+export interface IndayNutriFormat {
+    nutri: NutriFormat;
+}
+
+export interface NutriFormat {
+    calo?: number;
+    carb?: number;
+    fat?: number;
+    protein?: number;
+    fiber?: number;
+    sugar?: number;
+}
+
+export interface ImgAddressFormat {
+    uri: any;
+}
+
+export interface ScheduleFormat {
+    date: Date | Date[];
+    reminder: boolean;
+}
+
+export interface ItemSpiceFormat {
     name: string;
-    imgAddress: any;
-    bio: string;
+    unit: string;
 }
 
-export interface BlogPostFormat {
-    id: number;
-    title: string;
-    character: string;
-    imgAddress: any;
-    readTime: string;
-    uploadDate: Date;
-    detail: BlogPostDetailFormat;
-    view?: number;
-    author?: AuthorFormat;
-}
-
-export interface BlogPostDetailFormat {
-    timeHappen?: String;
-    context: string | Array<string | string[]>;
-    mainStory: string | Array<string | string[]>;
-    result: string | Array<string | string[]>;
-    image: any[];
-    links?: string[];
-}
-
-export interface PodcastFormat {
-    id: number;
-    title: string;
-    imgAddress: any;
-    uploadDate: Date;
-    detail: PodcastEpsFormat[];
-}
-
-export interface PodcastEpsFormat {
-    id: number;
-    title: string;
-    imgAddress: any;
-    link: string;
-}
-
-export interface ThisDayThatYearFormat {
-    id: number;
-    title: string;
-    timePoint: string;
-    content: string;
-    detail: BlogPostDetailFormat;
-}
-
-export interface HistoryPersonFormat {
-    id: number;
+export interface ItemFormat {
     name: string;
-    nickName: string;
-    imgAddress: any;
-    detail: {
-        bio: string;
-        mainStory: string[];
+    unit?: string;
+    amount?: number;
+    nutri?: NutriFormat;
+    info?: string | string[];
+    imgAddress?: ImgAddressFormat;
+    related?: ItemFormat[];
+    recipeRelated?: RecipeFormat[];
+}
+
+export interface RecipeFormat {
+    id: `${UserFormat['email']}-${string}`;
+    author?: UserFormat;
+    name: string;
+    info?: string;
+    imgAddress?: ImgAddressFormat;
+    nutri?: NutriFormat;
+    ingredients: [ItemFormat['name'], number][];
+    spice?: [ItemSpiceFormat['name'], number][];
+    serving?: number;
+    preTime?: number;
+    cookTime?: number;
+    steps: CookStepFormat[];
+    related?: RecipeFormat[];
+    cmt?: {
+        user: UserFormat;
+        content: string;
+        time: Date;
+        rate: number;
     }
+}
+
+export interface CookStepFormat {
+    name: string;
+    steps: [string, ImgAddressFormat?][];
+}
+
+export interface MealFormat {
+    name: 'Bữa sáng' | 'Bữa trưa' | 'Bữa tối' | 'Khác';
+    totalNutri: NutriFormat;
+    recipes: RecipeFormat[];
+}
+
+export interface CateFoodFormat {
+    name: string;
+    items: { itemName: string, itemKcal: number }[];
 }

@@ -106,9 +106,8 @@ const BottomTab = () => {
                     // flexDirection: 'row',
                     // justifyContent: 'space-between',
                     // alignItems: 'center',
-                    // paddingHorizontal: vw(4),
-                    paddingVertical: Platform.OS === 'android' ? null : vh(1),
-                    paddingBottom: insets.bottom,
+                    paddingHorizontal: vw(6),
+                    paddingBottom: insets.bottom + vh(0.5),
                 },
             }}
         >

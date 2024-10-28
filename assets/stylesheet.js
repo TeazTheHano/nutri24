@@ -720,6 +720,10 @@ const styles = StyleSheet.create({
         borderRadius: vw(2.5),
     },
 
+    borderRadius1vw: {
+        borderRadius: vw(1),
+    },
+
     borderRadius2vw: {
         borderRadius: vw(2),
     },

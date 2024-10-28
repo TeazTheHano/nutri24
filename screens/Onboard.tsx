@@ -92,7 +92,7 @@ export default function Onboard() {
                             {rightLongArrow(vw(4), vw(4))}
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => { setStep(step + 3) }}
+                        <TouchableOpacity onPress={() => { setStep(4) }}
                             style={[styles.flexRowCenter, styles.gap2vw, styles.padding3vw, styles.wm30vw, styles.borderRadius2vw, { backgroundColor: clrStyle.white, opacity: step == onbData.length ? 0 : 1 }]}>
                             <Be18Med style={{ color: getColor('Main mode/100') }}>Bỏ qua</Be18Med>
                         </TouchableOpacity>
