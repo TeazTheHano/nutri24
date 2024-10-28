@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, TouchableOpacity, Image, ImageStyle } from 'react-native'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import * as CLASS from '../assets/Class'
 import * as CTEXT from '../assets/CustomText'
@@ -11,12 +11,32 @@ import { factoryData } from '../data/factoryData';
 import * as FORMATDATA from '../data/interfaceFormat';
 import getColor from '../assets/getColor';
 import { SvgXml } from 'react-native-svg';
+import * as STOREFNC from '../data/storageFunc';
+import * as Progress from 'react-native-progress';
+
 
 export default function Home() {
     const navigation = useNavigation();
     const [CurrentCache, dispatch] = useContext(CUSTOMCACHE.RootContext);
     const [searchInput, setSearchInput] = React.useState('');
     const [searchResult, setSearchResult] = React.useState<any[]>([]);
+
+    // fetch data from storage
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            try {
+                STOREFNC.getTodayNutri().then((ret: FORMATDATA.NutriFormat) => {
+                    dispatch(CUSTOMCACHE.currentSetTodayNutri(ret));
+                })
+                STOREFNC.getGoalNutri().then((ret: FORMATDATA.NutriFormat) => {
+                    dispatch(CUSTOMCACHE.currentSetGoalNutri(ret));
+                })
+            } catch (error) {
+                console.log('Error at Home.tsx useEffect: ', error);
+            }
+        });
+        return unsubscribe;
+    }, [navigation]);
 
     return (
         <CLASS.SSBarWithSaveArea>
@@ -52,8 +72,64 @@ export default function Home() {
                     </TouchableOpacity>
                 </CLASS.ViewRowBetweenCenter>
 
-                
+                <CLASS.ViewRowBetweenCenter style={[styles.padding4vw, styles.borderRadius20, styles.gap4vw, { backgroundColor: getColor('Grey/10') }]}>
+                    <CLASS.ViewColCenter style={[styles.flex1, styles.padding4vw, styles.borderRadius20, { backgroundColor: getColor('Background/5') }]}>
+                        <CTEXT.Be14Med style={{ color: getColor('Grey/100') }}>Calories</CTEXT.Be14Med>
+                        <CTEXT.Be16Bold style={[{ color: getColor('Content/dark/1') }]}>{CurrentCache.todayNutri.calo}</CTEXT.Be16Bold>
+                        <CLASS.ViewColCenter style={[styles.positionRelative]}>
+                            <Progress.Circle
+                                progress={(CurrentCache.todayNutri.calo ? CurrentCache.todayNutri.calo : 1) / (CurrentCache.goalNutri?.calo ? CurrentCache.goalNutri.calo : 1)}
+                                // progress={300 / (CurrentCache.goalNutri?.calo ? CurrentCache.goalNutri.calo : 1)}
+                                size={vw(30)}
+                                thickness={vw(3)}
+                                borderWidth={0}
+                                unfilledColor={getColor('Background/5')}
+                                color={getColor('Main mode/80')}
+                                // style={[styles.borderRadius100, { backgroundColor: getColor('Main mode/100') }]}
+                                showsText
+
+                                formatText={() => {
+                                    let caloLeft = (CurrentCache.goalNutri?.calo ? CurrentCache.goalNutri.calo : 1) - (CurrentCache.todayNutri.calo ? CurrentCache.todayNutri.calo : 1);
+                                    return (
+                                        <CLASS.ViewColCenter style={[styles.flex1, styles.borderRadius100,]}>
+                                            <CTEXT.Be12Reg style={{ color: clrStyle.white }}>{caloLeft > 0 ? `còn` : `vượt`}</CTEXT.Be12Reg>
+                                            <CTEXT.Be14Reg style={{ color: clrStyle.white }}>{Math.abs(caloLeft)}kCal</CTEXT.Be14Reg>
+                                        </CLASS.ViewColCenter>
+                                    )
+                                }}
+                            />
+                            <View style={[styles.positionAbsolute, styles.borderRadius100, { width: vw(23), height: vw(23), zIndex: -100, backgroundColor: getColor('Main mode/100') }]} />
+                        </CLASS.ViewColCenter>
+                    </CLASS.ViewColCenter>
+
+                    <CLASS.ViewColStartBetween style={[styles.gap2vw]}>
+                        <CLASS.ViewCol>
+                            <CTEXT.Be16Bold>Carbs</CTEXT.Be16Bold>
+                            <CLASS.ViewRowCenter style={[styles.positionRelative]}>
+                                <View style={[styles.flex1, styles.border1, styles.marginVertical2vw, { borderColor: getColor('Main mode/80') }]} />
+                                <View style={[styles.borderRadius100, styles.positionAbsolute, { width: `${(CurrentCache.todayNutri.carb ? CurrentCache.todayNutri.carb : 1) / (CurrentCache.goalNutri?.carb ? CurrentCache.goalNutri.carb : 1) * 100}%`, minWidth: vw(2), height: vw(2), left: 0, backgroundColor: getColor('Main mode/80') }]} />
+                            </CLASS.ViewRowCenter>
+                            <CTEXT.Be14Reg style={{ color: getColor('Grey/100') }}>{CurrentCache.todayNutri.carb}g</CTEXT.Be14Reg>
+                        </CLASS.ViewCol>
+                        <CLASS.ViewCol>
+                            <CTEXT.Be16Bold>Protein</CTEXT.Be16Bold>
+                            <CLASS.ViewRowCenter style={[styles.positionRelative]}>
+                                <View style={[styles.flex1, styles.border1, styles.marginVertical2vw, { borderColor: getColor('Sencondary/Blue/100') }]} />
+                                <View style={[styles.borderRadius100, styles.positionAbsolute, { width: `${(CurrentCache.todayNutri.protein ? CurrentCache.todayNutri.protein : 1) / (CurrentCache.goalNutri?.protein ? CurrentCache.goalNutri.protein : 1) * 100}%`, minWidth: vw(2), height: vw(2), left: 0, backgroundColor: getColor('Sencondary/Blue/100') }]} />
+                            </CLASS.ViewRowCenter>
+                            <CTEXT.Be14Reg style={{ color: getColor('Grey/100') }}>{CurrentCache.todayNutri.protein}g</CTEXT.Be14Reg>
+                        </CLASS.ViewCol>
+                        <CLASS.ViewCol>
+                            <CTEXT.Be16Bold>Fats</CTEXT.Be16Bold>
+                            <CLASS.ViewRowCenter style={[styles.positionRelative]}>
+                                <View style={[styles.flex1, styles.border1, styles.marginVertical2vw, { borderColor: getColor('Sencondary/Yellow/80') }]} />
+                                <View style={[styles.borderRadius100, styles.positionAbsolute, { width: `${(CurrentCache.todayNutri.fat ? CurrentCache.todayNutri.fat : 1) / (CurrentCache.goalNutri?.fat ? CurrentCache.goalNutri.fat : 1) * 100}%`, minWidth: vw(2), height: vw(2), left: 0, backgroundColor: getColor('Sencondary/Yellow/80') }]} />
+                            </CLASS.ViewRowCenter>
+                            <CTEXT.Be14Reg style={{ color: getColor('Grey/100') }}>{CurrentCache.todayNutri.fat}g</CTEXT.Be14Reg>
+                        </CLASS.ViewCol>
+                    </CLASS.ViewColStartBetween>
+                </CLASS.ViewRowBetweenCenter>
             </ScrollView>
-        </CLASS.SSBarWithSaveArea>
+        </CLASS.SSBarWithSaveArea >
     )
 }

@@ -10,21 +10,25 @@
 //     example: 'example'
 // };
 
-import { UserFormat } from "../interfaceFormat";
+import { NutriFormat, UserFormat } from "../interfaceFormat";
 
 export interface CurrentCache {
     user: UserFormat;
+    todayNutri: NutriFormat;
+    goalNutri?: NutriFormat;
 }
 
 export interface Action {
     type: string;
-    payload?: UserFormat;
+    payload?: UserFormat | NutriFormat;
 }
 
 export const initialState: CurrentCache = {
     user: {
         name: '',
         age: '',
-        imgAddress: ''
+        imgAddress: '',
+        email: '',
     },
+    todayNutri: {}
 };

@@ -6,7 +6,16 @@ export const factoryData: {
     recipeList: FormatData.RecipeFormat[];
     mealList?: FormatData.RecipeFormat[];
     cateList?: FormatData.CateFoodFormat[];
+    targetNutri: FormatData.NutriFormat;
 } = {
+    targetNutri: {
+        calo: 2500,
+        carb: 300,
+        protein: 50,
+        fat: 70,
+        fiber: 30,
+        sugar: 50
+    },
     itemList: [
         {
             name: 'Cà chua',
@@ -22,7 +31,7 @@ export const factoryData: {
             },
             info: 'Cà chua có chứa nhiều vitamin C và lycopene',
             imgAddress: {
-                uri: require('../assets/img/food/tomato.jpg')
+                uri: require('../assets/photos/food/Tomato.jpg')
             },
             related: [
                 {
@@ -38,7 +47,7 @@ export const factoryData: {
                         sugar: 1
                     },
                     imgAddress: {
-                        uri: require('../assets/img/food/tomato.jpg')
+                        uri: require('../assets/photos/food/Tomato.jpg')
                     }
                 }
             ]
@@ -57,7 +66,7 @@ export const factoryData: {
             },
             info: 'Cà rốt có chứa nhiều vitamin A và beta-carotene',
             imgAddress: {
-                uri: require('../assets/img/food/carrot.jpg')
+                uri: require('../assets/photos/food/Tomato.jpg')
             }
         }
     ],
@@ -145,7 +154,7 @@ export const factoryData: {
             id: `nutri1@gmail.com-00345`,
             name: 'Salad cà chua',
             imgAddress: {
-                uri: require('../assets/img/recipe/salad-tomato.jpg')
+                uri: require('../assets/photos/food/Tomato.jpg')
             },
             preTime: 10,
             cookTime: 0,

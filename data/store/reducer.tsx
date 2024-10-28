@@ -15,6 +15,8 @@
 import * as FormatData from "../interfaceFormat";
 import {
     initialState, Action, CurrentCache, SET_USER,
+    SET_TODAY_NUTRI,
+    SET_GOAL_NUTRI,
 
 } from "./index";
 
@@ -26,7 +28,18 @@ export default function setReducer(state = initialState, action: Action): Curren
                 user: action.payload as FormatData.UserFormat
             };
         }
-
+        case SET_TODAY_NUTRI: {
+            return {
+                ...state,
+                todayNutri: action.payload as FormatData.NutriFormat
+            };
+        }
+        case SET_GOAL_NUTRI: {
+            return {
+                ...state,
+                goalNutri: action.payload as FormatData.NutriFormat
+            };
+        }
         default:
             return state;
     }
