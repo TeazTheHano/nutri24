@@ -5,7 +5,7 @@ export const factoryData: {
     spiceList: FormatData.ItemSpiceFormat[];
     recipeList: FormatData.RecipeFormat[];
     mealList?: FormatData.RecipeFormat[];
-    cateList?: FormatData.CateFoodFormat[];
+    cateList: FormatData.CateFoodFormat[];
     targetNutri: FormatData.NutriFormat;
 } = {
     cateList: [
@@ -16,6 +16,10 @@ export const factoryData: {
         {
             name: 'Thịt cá',
             items: ['Cá hồi', 'Cá thu', 'Cá ngừ', 'Cá chép', 'Cá trê']
+        },
+        {
+            name: 'Gia vị',
+            items: []
         }
     ],
     targetNutri: {
@@ -30,7 +34,7 @@ export const factoryData: {
         {
             name: 'Cà chua',
             unit: 'Quả',
-            amount: 2,
+            amount: 1,
             nutri: {
                 calo: 20,
                 carb: 4,
@@ -75,6 +79,57 @@ export const factoryData: {
                 sugar: 2
             },
             info: 'Cà rốt có chứa nhiều vitamin A và beta-carotene',
+            imgAddress: {
+                uri: require('../assets/photos/food/Tomato.jpg')
+            }
+        },
+        {
+            name: 'Dưa leo',
+            unit: 'Quả',
+            amount: 1,
+            nutri: {
+                calo: 15,
+                carb: 3,
+                protein: 1,
+                fat: 0,
+                fiber: 1,
+                sugar: 2
+            },
+            info: 'Dưa leo có chứa nhiều nước và vitamin K',
+            imgAddress: {
+                uri: require('../assets/photos/food/Tomato.jpg')
+            }
+        },
+        {
+            name: 'Hành tây',
+            unit: 'Củ',
+            amount: 1,
+            nutri: {
+                calo: 40,
+                carb: 9,
+                protein: 1,
+                fat: 0,
+                fiber: 1,
+                sugar: 4
+            },
+            info: 'Hành tây có chứa nhiều vitamin C và quercetin',
+            imgAddress: {
+                uri: require('../assets/photos/food/Tomato.jpg')
+            }
+        },
+        {
+            name: 'Rau mùi',
+            unit: 'Bó',
+            amount: 1,
+            nutri: {
+                calo: 5,
+                carb: 1,
+                protein: 0,
+                fat: 0,
+                fiber: 1,
+                sugar: 0
+            },
+            info: 'Rau mùi có chứa nhiều vitamin A và C',
             imgAddress: {
                 uri: require('../assets/photos/food/Tomato.jpg')
             }

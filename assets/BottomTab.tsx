@@ -102,51 +102,26 @@ const BottomTab = () => {
                 tabBarHideOnKeyboard: true,
                 tabBarStyle: {
                     height: BOTTOM_TAB_HEIGHT + insets.bottom,
-                    // display: 'flex',
-                    // flexDirection: 'row',
-                    // justifyContent: 'space-between',
-                    // alignItems: 'center',
                     paddingHorizontal: vw(6),
                     paddingBottom: insets.bottom + vh(0.5),
                 },
             }}
         >
-            <Tab.Screen name={iconData[0].title} component={iconData[0].page}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <SvgXml xml={focused ? iconData[0].icon : iconData[0].iconActive} width={BOTTOM_TAB_ICON_SIZE} height={BOTTOM_TAB_ICON_SIZE} />
-                    ),
-                    tabBarLabel: ({ focused }) => (
-                        <RenderLabel focused={focused} title={iconData[0].title} />
-                    ),
-                }} />
-            <Tab.Screen name={iconData[1].title} component={iconData[1].page}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <SvgXml xml={focused ? iconData[1].icon : iconData[1].iconActive} width={BOTTOM_TAB_ICON_SIZE} height={BOTTOM_TAB_ICON_SIZE} />
-                    ),
-                    tabBarLabel: ({ focused }) => (
-                        <RenderLabel focused={focused} title={iconData[1].title} />
-                    ),
-                }} />
-            <Tab.Screen name={iconData[2].title} component={iconData[2].page}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <SvgXml xml={focused ? iconData[2].icon : iconData[2].iconActive} width={BOTTOM_TAB_ICON_SIZE} height={BOTTOM_TAB_ICON_SIZE} />
-                    ),
-                    tabBarLabel: ({ focused }) => (
-                        <RenderLabel focused={focused} title={iconData[2].title} />
-                    ),
-                }} />
-            <Tab.Screen name={iconData[3].title} component={iconData[3].page}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <SvgXml xml={focused ? iconData[3].icon : iconData[3].iconActive} width={BOTTOM_TAB_ICON_SIZE} height={BOTTOM_TAB_ICON_SIZE} />
-                    ),
-                    tabBarLabel: ({ focused }) => (
-                        <RenderLabel focused={focused} title={iconData[3].title} />
-                    ),
-                }} />
+            {iconData.map((item, index) => (
+                <Tab.Screen
+                    key={index}
+                    name={item.title}
+                    component={item.page}
+                    options={{
+                        tabBarIcon: ({ focused }) => (
+                            <SvgXml xml={focused ? item.icon : item.iconActive} width={BOTTOM_TAB_ICON_SIZE} height={BOTTOM_TAB_ICON_SIZE} />
+                        ),
+                        tabBarLabel: ({ focused }) => (
+                            <RenderLabel focused={focused} title={item.title} />
+                        ),
+                    }}
+                />
+            ))}
         </Tab.Navigator>
     );
 };

@@ -19,6 +19,7 @@ import User from './screens/User';
 // >>>>>>>>>>
 import BlogView from './screens/BlogView';
 import CreateRecipe from './screens/CreateRecipe';
+import ItemView from './screens/ItemView';
 // ____________________END OF IMPORT_______________________
 
 const Stack = createNativeStackNavigator();
@@ -38,6 +39,7 @@ function App(): React.JSX.Element {
           {/* >>>> */}
           <Stack.Screen name="BlogView" component={BlogView} />
           <Stack.Screen name="CreateRecipe" component={CreateRecipe} />
+          <Stack.Screen name="ItemView" component={ItemView} />
         </Stack.Navigator>
       </NavigationContainer>
     </ProviderTotal>

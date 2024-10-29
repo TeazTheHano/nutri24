@@ -557,6 +557,7 @@ export class TopNav3ItemWithTitle extends Component<{
     showBack?: boolean,
     iconRight?: any,
     fnc?: () => void,
+    textCenter?: boolean,
 }> {
     render() {
         return (
@@ -566,13 +567,14 @@ export class TopNav3ItemWithTitle extends Component<{
                         onPress={() => this.props.nav.goBack()}
                         style={[styles.borderRadius100, styles.padding3vw, { backgroundColor: getColor('Grey/10') }]}>
                         {SVG.leftLongArrow(vw(6), vw(6))}
-                    </TouchableOpacity> : null}
-                <CTEXT.Be22Med style={{ color: clrStyle.black }}>{this.props.title}</CTEXT.Be22Med>
-                {this.props.iconRight ? <TouchableOpacity
-                    onPress={this.props.fnc}
-                    style={[styles.borderRadius100, styles.padding3vw, { backgroundColor: getColor('Grey/10') }]}>
-                    {this.props.iconRight}
-                </TouchableOpacity> : null}
+                    </TouchableOpacity> : <View style={[{ width: this.props.iconRight ? vw(12) : 0 }]} />}
+                <CTEXT.Be22Med style={[this.props.textCenter ? styles.textCenter : styles.textLeft, styles.flex1, { color: clrStyle.black }]}>{this.props.title}</CTEXT.Be22Med>
+                {this.props.iconRight ?
+                    <TouchableOpacity
+                        onPress={this.props.fnc}
+                        style={[styles.borderRadius100, styles.padding3vw, { backgroundColor: getColor('Grey/10') }]}>
+                        {this.props.iconRight}
+                    </TouchableOpacity> : <View style={[{ width: this.props.showBack ? vw(12) : 0 }]} />}
             </ViewRowBetweenCenter>
         )
     }

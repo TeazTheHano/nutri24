@@ -72,8 +72,8 @@ export default function Home() {
                     </TouchableOpacity>
                 </CLASS.ViewRowBetweenCenter>
 
-                <CLASS.ViewRowBetweenCenter style={[styles.padding4vw, styles.borderRadius20, styles.gap4vw, { backgroundColor: getColor('Grey/10') }]}>
-                    <CLASS.ViewColCenter style={[styles.flex1, styles.padding4vw, styles.borderRadius20, { backgroundColor: getColor('Background/5') }]}>
+                <CLASS.ViewRowBetweenCenter style={[styles.padding4vw, styles.borderRadius20, styles.gap2vw, { backgroundColor: getColor('Grey/10') }]}>
+                    <CLASS.ViewColCenter style={[styles.flex1, styles.padding4vw, styles.borderRadius20, styles.gap1vw, { backgroundColor: getColor('Background/5') }]}>
                         <CTEXT.Be14Med style={{ color: getColor('Grey/100') }}>Calories</CTEXT.Be14Med>
                         <CTEXT.Be16Bold style={[{ color: getColor('Content/dark/1') }]}>{CurrentCache.todayNutri.calo}</CTEXT.Be16Bold>
                         <CLASS.ViewColCenter style={[styles.positionRelative]}>
@@ -102,7 +102,7 @@ export default function Home() {
                         </CLASS.ViewColCenter>
                     </CLASS.ViewColCenter>
 
-                    <CLASS.ViewColStartBetween style={[styles.gap2vw]}>
+                    <CLASS.ViewColStartBetween style={[styles.gap2vw, styles.paddingH6vw]}>
                         <CLASS.ViewCol>
                             <CTEXT.Be16Bold>Carbs</CTEXT.Be16Bold>
                             <CLASS.ViewRowCenter style={[styles.positionRelative]}>
@@ -140,7 +140,7 @@ export default function Home() {
                 <CLASS.ViewRowBetweenCenter style={[styles.marginVertical4vw]}>
                     <CTEXT.Be20Med>Danh mục</CTEXT.Be20Med>
                     <TouchableOpacity
-                        onPress={() => { }}
+                        onPress={() => { navigation.navigate('BottomTab', { screen: 'CatePage' }) }}
                         style={[styles.flexRowCenter]}>
                         <CTEXT.Be16Med color={getColor('Main mode/100')}>Xem thêm</CTEXT.Be16Med>
                         {SVG.downArrow(vw(6), vw(6), getColor('Main mode/100'))}
@@ -159,7 +159,7 @@ export default function Home() {
                                 onPress={() => { }}
                                 style={[styles.marginRight4vw, styles.padding4vw, styles.borderRadius4vw, { backgroundColor: getColor('Background/6') }]}>
                                 {/* <Image source={item.imgAddress} style={[styles.w100, styles.h100, styles.borderRadius4vw]} /> */}
-                                <CTEXT.Be16Med style={[styles.marginTop2vw, { color: getColor('Content/dark/1') }]}>{item.name}</CTEXT.Be16Med>
+                                <CTEXT.Be16Med style={[{ color: getColor('Content/dark/1') }]}>{item.name}</CTEXT.Be16Med>
                             </TouchableOpacity>
                         )
                     }}

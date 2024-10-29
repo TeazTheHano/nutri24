@@ -17,6 +17,8 @@ import {
     initialState, Action, CurrentCache, SET_USER,
     SET_TODAY_NUTRI,
     SET_GOAL_NUTRI,
+    SET_CURRENT_ITEM,
+    REMOVE_CURRENT_ITEM,
 
 } from "./index";
 
@@ -40,6 +42,25 @@ export default function setReducer(state = initialState, action: Action): Curren
                 goalNutri: action.payload as FormatData.NutriFormat
             };
         }
+        case SET_CURRENT_ITEM: {
+            if (state.currentItem.includes(action.payload as FormatData.ItemFormat)) {
+                return state;
+            }
+            return {
+                ...state,
+                currentItem: [...state.currentItem, action.payload as FormatData.ItemFormat]
+            };
+        }
+        case REMOVE_CURRENT_ITEM: {
+            if (!state.currentItem.includes(action.payload as FormatData.ItemFormat)) {
+                return state;
+            }
+            return {
+                ...state,
+                currentItem: state.currentItem.filter((item) => item !== action.payload)
+            };
+        }
+
         default:
             return state;
     }
